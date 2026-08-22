@@ -33,7 +33,15 @@ export default function ContactForm() {
       subject
     )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
 
-    window.location.href = mailto;
+    // A hidden-anchor click opens the mail client without the top-level
+    // navigation attempt window.location.href triggers, which some
+    // browsers treat as leaving the page (resetting scroll position).
+    const link = document.createElement("a");
+    link.href = mailto;
+    link.rel = "noopener";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
   return (
