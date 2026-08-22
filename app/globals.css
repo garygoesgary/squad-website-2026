@@ -124,8 +124,18 @@ img { max-width: 100%; display: block; }
 }
 .hero-media {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(169,31,46,0.18), transparent 60%);
+  inset: -12% 0;
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(169, 31, 46, 0.25), transparent 60%),
+    linear-gradient(180deg, rgba(20, 16, 14, 0.35) 0%, rgba(14, 11, 10, 0.75) 100%),
+    url('/images/hero-chef.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-media { transform: none !important; }
 }
 .hero-inner {
   position: relative;
