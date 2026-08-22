@@ -1,6 +1,9 @@
+import ScrollReveal from "./ScrollReveal";
+
 export default function Home() {
   return (
     <>
+      <ScrollReveal />
       <header className="site-header">
         <div className="wrap header-inner">
           <a className="logo" href="#">
@@ -31,7 +34,7 @@ export default function Home() {
 
       <section className="hero">
         <div className="hero-media" aria-hidden="true" />
-        <div className="wrap hero-inner">
+        <div className="wrap hero-inner" data-reveal>
           <h1>We love your work</h1>
           <p className="hero-sub">
             Squad Recruitment connects you to exclusive professional networks
@@ -45,7 +48,7 @@ export default function Home() {
       </section>
 
       <section className="mission">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <p className="mission-lead">
             Squad Recruitment is a hospitality-born team that will help you
             find the best match. We seek talent, not just a person.
@@ -59,9 +62,9 @@ export default function Home() {
 
       <section className="services">
         <div className="wrap services-grid">
-          <div className="service-card" aria-hidden="true" />
-          <div className="service-card" aria-hidden="true" />
-          <div className="service-card" aria-hidden="true" />
+          <div className="service-card" data-reveal aria-hidden="true" />
+          <div className="service-card" data-reveal aria-hidden="true" />
+          <div className="service-card" data-reveal aria-hidden="true" />
         </div>
         <div className="services-labels">
           <div className="wrap services-labels-grid">
@@ -73,7 +76,7 @@ export default function Home() {
       </section>
 
       <section className="trusted">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <p className="trusted-label">Trusted by</p>
           <div className="trusted-strip">
             <span className="trusted-logo">Standbreak Collection</span>
@@ -86,7 +89,7 @@ export default function Home() {
       </section>
 
       <section className="dots-row" aria-hidden="true">
-        <div className="wrap dots-grid">
+        <div className="wrap dots-grid" data-reveal>
           <span className="dot-circle" />
           <span className="dot-circle" />
           <span className="dot-circle" />
@@ -98,7 +101,7 @@ export default function Home() {
 
       <section className="insights">
         <div className="wrap">
-          <div className="insights-head">
+          <div className="insights-head" data-reveal>
             <div>
               <h2>Read latest insights.</h2>
               <p>Insights and news articles authored by our very own team.</p>
@@ -110,7 +113,7 @@ export default function Home() {
           </div>
 
           <div className="insights-cards">
-            <article className="insight-card">
+            <article className="insight-card" data-reveal>
               <p className="insight-date">03 September 2024</p>
               <p className="insight-excerpt">
                 Worried about your kitchen hiring budget? Getting staffing
@@ -123,7 +126,7 @@ export default function Home() {
                 Read more &gt;
               </a>
             </article>
-            <article className="insight-card">
+            <article className="insight-card" data-reveal>
               <p className="insight-date">11 July 2024</p>
               <p className="insight-excerpt">
                 Hiring is a full time job, and if you don&apos;t have a
@@ -135,7 +138,7 @@ export default function Home() {
                 Read more &gt;
               </a>
             </article>
-            <article className="insight-card insight-card--dark">
+            <article className="insight-card insight-card--dark" data-reveal>
               <p className="insight-date">04 June 2024</p>
               <p className="insight-excerpt">
                 Staying ahead in hospitality means keeping your pipeline of
@@ -149,7 +152,7 @@ export default function Home() {
             </article>
           </div>
 
-          <div className="insights-feature">
+          <div className="insights-feature" data-reveal>
             <div className="insights-feature-media" aria-hidden="true" />
             <div className="insights-feature-copy">
               <p>
@@ -172,7 +175,7 @@ export default function Home() {
       </section>
 
       <section className="run-banner">
-        <div className="wrap run-inner">
+        <div className="wrap run-inner" data-reveal>
           <h2>
             We run<span className="run-block" aria-hidden="true" />.
           </h2>
@@ -181,14 +184,14 @@ export default function Home() {
 
       <section className="contact">
         <div className="wrap contact-grid">
-          <div className="contact-intro">
+          <div className="contact-intro" data-reveal>
             <h2>Send us a message.</h2>
             <p>
               We love to talk all things people. Get in touch with the team
               for any inquiries, whether business-related or otherwise.
             </p>
           </div>
-          <form className="contact-form">
+          <form className="contact-form" data-reveal>
             <div className="form-row">
               <label>
                 First name*
@@ -253,7 +256,7 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <div className="wrap footer-grid">
+        <div className="wrap footer-grid" data-reveal>
           <div className="footer-brand">
             <span className="logo-badge">
               squad<span className="dot">.</span>
