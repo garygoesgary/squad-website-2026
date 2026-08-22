@@ -1,47 +1,42 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
-const RECIPIENT = "garygoes@gmail.com";
+type Status = "idle" | "sending" | "success" | "error";
 
 export default function ContactForm() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const payload = Object.fromEntries(data.entries());
 
-    const firstName = data.get("first_name")?.toString().trim() ?? "";
-    const lastName = data.get("last_name")?.toString().trim() ?? "";
-    const email = data.get("email")?.toString().trim() ?? "";
-    const phone = data.get("phone")?.toString().trim() ?? "";
-    const iAm = data.get("i_am")?.toString().trim() ?? "";
-    const message = data.get("message")?.toString().trim() ?? "";
-    const referral = data.get("referral")?.toString().trim() ?? "";
+    setStatus("sending");
+    setErrorMessage("");
 
-    const subject = `Website enquiry from ${firstName} ${lastName}`.trim();
-    const bodyLines = [
-      `Name: ${firstName} ${lastName}`.trim(),
-      `Email: ${email}`,
-      phone && `Phone: ${phone}`,
-      iAm && `I am: ${iAm}`,
-      referral && `How they heard about us: ${referral}`,
-      "",
-      "Message:",
-      message,
-    ].filter((line): line is string => Boolean(line) || line === "");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    const mailto = `mailto:${RECIPIENT}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        throw new Error(result?.error ?? "Couldn't send the message.");
+      }
 
-    // A hidden-anchor click opens the mail client without the top-level
-    // navigation attempt window.location.href triggers, which some
-    // browsers treat as leaving the page (resetting scroll position).
-    const link = document.createElement("a");
-    link.href = mailto;
-    link.rel = "noopener";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "Couldn't send the message."
+      );
+    }
   }
 
   return (
@@ -102,9 +97,21 @@ export default function ContactForm() {
         <p>Upload a file or drag and drop.</p>
         <p className="file-upload-note">Maximum upload size: 5.0MB</p>
       </div>
-      <button type="submit" className="btn btn-primary">
-        Submit &rarr;
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={status === "sending"}
+      >
+        {status === "sending" ? "Sending…" : <>Submit &rarr;</>}
       </button>
+      {status === "success" && (
+        <p className="form-status form-status--success">
+          Thanks — your message has been sent.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="form-status form-status--error">{errorMessage}</p>
+      )}
     </form>
   );
 }

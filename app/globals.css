@@ -364,6 +364,18 @@ img { max-width: 100%; display: block; }
 }
 .file-upload-note { font-size: 0.75rem; margin-top: 0.25rem; }
 .contact-form .btn { align-self: flex-start; margin-top: 0.5rem; }
+.contact-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.form-status {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.form-status--success { color: #2f6b3a; }
+.form-status--error { color: var(--red); }
 
 /* Footer */
 .site-footer { background: var(--dark); color: var(--white); padding: clamp(3rem, 6vw, 4rem) 0 1.5rem; }
