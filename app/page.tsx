@@ -1,4 +1,5 @@
 import ScrollReveal from "./ScrollReveal";
+import ContactForm from "./ContactForm";
 
 export default function Home() {
   return (
@@ -191,67 +192,7 @@ export default function Home() {
               for any inquiries, whether business-related or otherwise.
             </p>
           </div>
-          <form className="contact-form" data-reveal>
-            <div className="form-row">
-              <label>
-                First name*
-                <input
-                  type="text"
-                  name="first_name"
-                  placeholder="Enter your name"
-                  required
-                />
-              </label>
-              <label>
-                Last name*
-                <input type="text" name="last_name" required />
-              </label>
-            </div>
-            <div className="form-row">
-              <label>
-                Email*
-                <input type="email" name="email" required />
-              </label>
-              <label>
-                Phone number
-                <input type="tel" name="phone" />
-              </label>
-            </div>
-            <label>
-              I am *
-              <select name="i_am" defaultValue="" required>
-                <option value="" disabled>
-                  Select an option
-                </option>
-                <option value="employer">An employer</option>
-                <option value="job_seeker">A job seeker</option>
-                <option value="other">Other</option>
-              </select>
-            </label>
-            <label>
-              Message*
-              <textarea name="message" rows={4} required />
-            </label>
-            <label>
-              How did you hear about us?
-              <select name="referral" defaultValue="">
-                <option value="" disabled>
-                  Select an option
-                </option>
-                <option value="search">Search engine</option>
-                <option value="social">Social media</option>
-                <option value="referral">Referral</option>
-                <option value="other">Other</option>
-              </select>
-            </label>
-            <div className="file-upload">
-              <p>Upload a file or drag and drop.</p>
-              <p className="file-upload-note">Maximum upload size: 5.0MB</p>
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Submit &rarr;
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
