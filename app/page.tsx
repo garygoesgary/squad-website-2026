@@ -1,10 +1,12 @@
 import ScrollReveal from "./ScrollReveal";
 import ContactForm from "./ContactForm";
+import HeroParallax from "./HeroParallax";
 
 export default function Home() {
   return (
     <>
       <ScrollReveal />
+      <HeroParallax />
 
       <header className="site-header">
         <div className="wrap header-inner">

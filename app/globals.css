@@ -111,13 +111,17 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 .hero-media {
   position: absolute;
-  inset: 0;
+  inset: -12% 0;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url('/images/hero-header.jpg');
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-media { transform: none !important; }
 }
 .hero-inner {
   position: relative;
@@ -147,7 +151,8 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   align-items: center;
   gap: 1rem;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: var(--white);
   font-family: var(--font-serif);
   font-size: 1rem;
