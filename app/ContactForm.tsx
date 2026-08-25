@@ -43,7 +43,9 @@ export default function ContactForm() {
     <form className="contact-form" data-reveal onSubmit={handleSubmit}>
       <div className="form-row">
         <label>
-          First name*
+          <span className="field-label">
+            First Name <span className="required">*</span>
+          </span>
           <input
             type="text"
             name="first_name"
@@ -52,40 +54,37 @@ export default function ContactForm() {
           />
         </label>
         <label>
-          Last name*
+          <span className="field-label">
+            Last Name <span className="required">*</span>
+          </span>
           <input type="text" name="last_name" required />
         </label>
       </div>
       <div className="form-row">
-        <label>
-          Email*
-          <input type="email" name="email" required />
+        <label className="field-plain">
+          <input type="email" name="email" placeholder="Email*" required />
         </label>
-        <label>
-          Phone number
-          <input type="tel" name="phone" />
+        <label className="field-plain">
+          <input type="tel" name="phone" placeholder="Phone number" />
         </label>
       </div>
-      <label>
-        I am *
+      <label className="field-plain">
         <select name="i_am" defaultValue="" required>
           <option value="" disabled>
-            Select an option
+            I am...*
           </option>
           <option value="An employer">An employer</option>
           <option value="A job seeker">A job seeker</option>
           <option value="Other">Other</option>
         </select>
       </label>
-      <label>
-        Message*
-        <textarea name="message" rows={4} required />
+      <label className="field-plain">
+        <textarea name="message" rows={4} placeholder="Message*" required />
       </label>
-      <label>
-        How did you hear about us?
+      <label className="field-plain">
         <select name="referral" defaultValue="">
           <option value="" disabled>
-            Select an option
+            How did you hear about us?*
           </option>
           <option value="Search engine">Search engine</option>
           <option value="Social media">Social media</option>
@@ -94,15 +93,19 @@ export default function ContactForm() {
         </select>
       </label>
       <div className="file-upload">
-        <p>Upload a file or drag and drop.</p>
-        <p className="file-upload-note">Maximum upload size: 5.0MB</p>
+        <p>
+          Upload a file or drag and drop
+          <br />
+          Maximum upload size: 5.24MB
+        </p>
       </div>
       <button
         type="submit"
-        className="btn btn-primary"
+        className="submit-btn"
         disabled={status === "sending"}
       >
-        {status === "sending" ? "Sending…" : <>Submit &rarr;</>}
+        {status === "sending" ? "Sending…" : "Submit"}
+        <img src="/images/icon-submit-arrow.svg" alt="" />
       </button>
       {status === "success" && (
         <p className="form-status form-status--success">

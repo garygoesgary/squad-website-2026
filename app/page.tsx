@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <ScrollReveal />
       <HeroParallax />
+
       <header className="site-header">
         <div className="wrap header-inner">
           <a className="logo" href="#">
@@ -17,20 +18,20 @@ export default function Home() {
           </a>
           <nav className="main-nav">
             <a href="#">
-              Employers <span className="caret">▾</span>
+              Employers <img className="caret" src="/images/icon-caret.svg" alt="" />
             </a>
             <a href="#">
-              Job Seekers <span className="caret">▾</span>
+              Job Seekers <img className="caret" src="/images/icon-caret.svg" alt="" />
             </a>
             <a href="#">
-              Sectors <span className="caret">▾</span>
+              Sectors <img className="caret" src="/images/icon-caret.svg" alt="" />
             </a>
             <a href="#">
-              About <span className="caret">▾</span>
+              About <img className="caret" src="/images/icon-caret.svg" alt="" />
             </a>
           </nav>
-          <a className="btn btn-outline" href="tel:1300461855">
-            Lets Talk: 1300 461 855
+          <a className="btn btn-outline" href="tel:1300491856">
+            Lets Talk: 1300 491 856
           </a>
         </div>
       </header>
@@ -43,8 +44,11 @@ export default function Home() {
             Squad Recruitment connects you to exclusive professional networks
             worldwide. Let us help you find your perfect match.
           </p>
-          <a className="btn btn-primary" href="#job-seekers">
-            Explore Recruitment Jobs
+          <a className="pill-link" href="#insights">
+            See what we are all about
+            <span className="pill-arrow">
+              <img src="/images/icon-submit-arrow.svg" alt="" />
+            </span>
           </a>
         </div>
         <div className="hero-bar" aria-hidden="true" />
@@ -82,11 +86,12 @@ export default function Home() {
         <div className="wrap" data-reveal>
           <p className="trusted-label">Trusted by</p>
           <div className="trusted-strip">
-            <span className="trusted-logo">Standbreak Collection</span>
-            <span className="trusted-logo">W</span>
-            <span className="trusted-logo trusted-logo--strong">AGNES</span>
-            <span className="trusted-logo">Bishopleg</span>
-            <span className="trusted-logo">EVT</span>
+            <span className="trusted-logo" />
+            <span className="trusted-logo" />
+            <span className="trusted-logo" />
+            <span className="trusted-logo" />
+            <span className="trusted-logo" />
+            <span className="trusted-logo" />
           </div>
         </div>
       </section>
@@ -102,56 +107,55 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="insights">
+      <section className="insights" id="insights">
         <div className="wrap">
           <div className="insights-head" data-reveal>
             <div>
               <h2>Read latest insights.</h2>
               <p>Insights and news articles authored by our very own team.</p>
             </div>
-            <div className="pagination-dots">
-              <span className="page-dot page-dot--active">1</span>
-              <span className="page-dot" />
+            <div className="pagination-arrows">
+              <button className="arrow-btn arrow-btn--prev" aria-label="Previous">
+                <img src="/images/icon-submit-arrow.svg" alt="" />
+              </button>
+              <button className="arrow-btn arrow-btn--next" aria-label="Next">
+                <img src="/images/icon-submit-arrow.svg" alt="" />
+              </button>
             </div>
           </div>
 
           <div className="insights-cards">
-            <article className="insight-card" data-reveal>
-              <p className="insight-date">03 September 2024</p>
+            <article className="insight-card insight-card--bright" data-reveal>
+              <p className="insight-date">02 September 2024</p>
               <p className="insight-excerpt">
                 Worried about your kitchen hiring budget? Getting staffing
                 right in an Australian food business is tricky at the best of
                 times, and when you compare hourly wages to day rates it can
                 often look like contractors are too expensive (even if
-                they&apos;re the ideal gap-fillers for your roster).
+                they&apos;d be ideal gap-fillers for your roster).
               </p>
               <a className="insight-link" href="#">
-                Read more &gt;
+                Read more
+                <img src="/images/icon-submit-arrow.svg" alt="" />
               </a>
             </article>
             <article className="insight-card" data-reveal>
               <p className="insight-date">11 July 2024</p>
               <p className="insight-excerpt">
-                Hiring is a full time job, and if you don&apos;t have a
-                dedicated hiring manager on staff (or they&apos;re too busy)
-                their when it comes time to recruit a new contract chef for
-                your business you&apos;ll need.
+                Hiring is a full-time job, and if you don&apos;t have a
+                dedicated hiring manager on staff (or they&apos;re just too
+                busy), then when it comes time to recruit a new contract chef
+                for your business you&apos;ll need.
               </p>
-              <a className="insight-link" href="#">
-                Read more &gt;
-              </a>
             </article>
-            <article className="insight-card insight-card--dark" data-reveal>
+            <article className="insight-card" data-reveal>
               <p className="insight-date">04 June 2024</p>
               <p className="insight-excerpt">
-                Staying ahead in hospitality means keeping your pipeline of
-                talent warm — even when you&apos;re not actively hiring,
-                demand can spike without warning and supply doesn&apos;t
-                always keep up.
+                Staying on top of recruitment in hospitality can be a
+                challenge. Particularly for regional businesses, mining sites
+                or just any area where demand for great talent exceeds
+                supply, when you need great people fast.
               </p>
-              <a className="insight-link" href="#">
-                Read more &gt;
-              </a>
             </article>
           </div>
 
@@ -163,27 +167,21 @@ export default function Home() {
                 right in an Australian food business is tricky at the best of
                 times, and when you compare hourly wages to day rates it can
                 often look like contractors are too expensive (even if
-                they&apos;re the ideal gap-fillers for your roster).
+                they&apos;d be ideal gap-fillers for your roster).
               </p>
               <p>
                 Worried about your kitchen hiring budget? Getting staffing
                 right in an Australian food business is tricky at the best of
                 times, and when you compare hourly wages to day rates it can
                 often look like contractors are too expensive (even if
-                they&apos;re the ideal gap-fillers for your roster).
+                they&apos;d be ideal gap-fillers for your roster).
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="run-banner">
-        <div className="wrap run-inner" data-reveal>
-          <h2>
-            We run<span className="run-block" aria-hidden="true" />.
-          </h2>
-        </div>
-      </section>
+      <section className="run-banner" aria-hidden="true" />
 
       <section className="contact">
         <div className="wrap contact-grid">
@@ -207,24 +205,10 @@ export default function Home() {
             <p className="footer-tagline">We love your work.</p>
           </div>
           <div className="footer-contact">
-            <p>
-              <a href="tel:1300461855">1300 461 855</a>
-            </p>
-            <p>
-              194 Sandgate Rd, Albion
-              <br />
-              Queensland 4010
-            </p>
-            <p>
-              120 Spencer St, Melbourne
-              <br />
-              Victoria 3000
-            </p>
-            <p>
-              64 York St, Sydney
-              <br />
-              New South Wales 2000
-            </p>
+            <p><a href="tel:1300491856">1300 491 856</a></p>
+            <p>194 Sandgate Rd, Albion<br />Queensland 4010</p>
+            <p>120 Spencer St, Melbourne<br />Victoria 3000</p>
+            <p>64 York St, Sydney<br />New South Wales 2000</p>
             <p>
               <a href="mailto:hello@squadrecruitment.com.au">
                 hello@squadrecruitment.com.au
@@ -232,30 +216,32 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="wrap footer-social">
-          <span className="social-icon" aria-label="Facebook">
-            FB
-          </span>
-          <span className="social-icon" aria-label="Instagram">
-            IG
-          </span>
-          <span className="social-icon" aria-label="LinkedIn">
-            LI
-          </span>
-          <span className="social-icon" aria-label="TikTok">
-            TT
-          </span>
-        </div>
+
         <div className="wrap footer-bottom">
+          <div className="footer-flags">
+            <span className="flag flag-au">
+              <img src="/images/flag-au-base.svg" alt="Australian flag" />
+              <img className="flag-au-stars" src="/images/flag-au-stars.svg" alt="" />
+            </span>
+            <img className="flag" src="/images/flag-aboriginal.png" alt="Aboriginal flag" />
+            <img className="flag" src="/images/flag-torres-strait.jpg" alt="Torres Strait Islander flag" />
+          </div>
           <p className="acknowledgement">
             Squad Recruitment acknowledges the Traditional Custodians of
             country throughout Australia and their connections to land, sea
-            and community. We pay our respects to Aboriginal and Torres
-            Strait Islander cultures and to their Elders past, present and
-            emerging.
+            and community. We pay our respect to their Elders past and
+            present and extend that respect to all Aboriginal and Torres
+            Strait Islander peoples today.
           </p>
           <p className="copyright">
-            Copyright &copy; 2026 <a href="#">Privacy Policy</a>
+            Copyright &copy; 2026{" "}
+            <a
+              href="https://www.squadrecruitment.com.au/privacy-policy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Privacy Policy
+            </a>
           </p>
         </div>
       </footer>
