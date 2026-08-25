@@ -1,19 +1,15 @@
 import ScrollReveal from "./ScrollReveal";
 import ContactForm from "./ContactForm";
-import HeroParallax from "./HeroParallax";
 
 export default function Home() {
   return (
     <>
       <ScrollReveal />
-      <HeroParallax />
 
       <header className="site-header">
         <div className="wrap header-inner">
           <a className="logo" href="#">
-            <span className="logo-badge">
-              squad<span className="dot">.</span>
-            </span>
+            <span className="logo-word">squad.</span>
             <span className="logo-tag">hospitality talent scouts</span>
           </a>
           <nav className="main-nav">
@@ -199,9 +195,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="wrap footer-grid" data-reveal>
           <div className="footer-brand">
-            <span className="logo-badge">
-              squad<span className="dot">.</span>
-            </span>
+            <span className="logo-word">squad.</span>
             <p className="footer-tagline">We love your work.</p>
           </div>
           <div className="footer-contact">

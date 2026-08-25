@@ -62,16 +62,12 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   flex-direction: column;
   gap: 0.15rem;
 }
-.logo-badge {
-  background: var(--red);
+.logo-word {
   color: var(--white);
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
+  font-size: 1.3rem;
   letter-spacing: 0.02em;
 }
-.logo-badge .dot { color: var(--white); }
 .logo-tag {
   color: var(--white);
   font-family: var(--font-serif);
@@ -117,18 +113,13 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 .hero-media {
   position: absolute;
-  inset: -12% 0;
+  inset: 0;
   background-image:
-    radial-gradient(circle at 50% 30%, rgba(215, 29, 35, 0.22), transparent 60%),
-    linear-gradient(180deg, rgba(20, 16, 14, 0.35) 0%, rgba(14, 11, 10, 0.78) 100%),
-    url('/images/hero-chef.jpg');
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('/images/hero-header.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
-  will-change: transform;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-media { transform: none !important; }
 }
 .hero-inner {
   position: relative;
