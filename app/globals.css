@@ -62,11 +62,10 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   flex-direction: column;
   gap: 0.15rem;
 }
-.logo-word {
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  letter-spacing: 0.02em;
+.logo-mark {
+  width: 110px;
+  height: auto;
+  border-radius: 6px;
 }
 .logo-tag {
   color: var(--white);
