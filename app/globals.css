@@ -65,7 +65,6 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .logo-mark {
   width: 110px;
   height: auto;
-  border-radius: 6px;
 }
 .logo-tag {
   color: var(--white);
