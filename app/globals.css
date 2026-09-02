@@ -28,12 +28,42 @@ img { max-width: 100%; display: block; }
   inset: -12% 0;
   background-image: url('/images/squad-image_Chef.webp');
   background-size: cover;
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
   will-change: transform;
 }
+.hero-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 11px;
+  background: red;
+}
+.scroll-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #d71d23;
+  animation: arrow-bounce 1.6s ease-in-out infinite;
+}
+.scroll-arrow svg {
+  width: 19px;
+  height: 19px;
+}
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
 @media (prefers-reduced-motion: reduce) {
-  .hero-media { transform: none !important; }
+  .scroll-arrow { animation: none; }
 }
 
 /* Header / Nav */

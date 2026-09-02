@@ -28,6 +28,19 @@ export default function Home() {
             <MobileNav />
           </div>
         </header>
+
+        <a className="scroll-arrow" href="#next" aria-label="Scroll down">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 8l7 7 7-7"
+              stroke="#fff"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
+        <div className="hero-bar" aria-hidden="true" />
       </section>
     </main>
   );
