@@ -42,7 +42,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 .logo-lockup {
-  height: 31px;
+  height: 38.75px;
   width: auto;
 }
 .main-nav {
@@ -54,7 +54,7 @@ img { max-width: 100%; display: block; }
 .main-nav a {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 13.6px;
   color: #fff;
   white-space: nowrap;
 }
