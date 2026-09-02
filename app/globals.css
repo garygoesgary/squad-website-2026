@@ -52,16 +52,14 @@ img { max-width: 100%; display: block; }
 }
 .hero-media {
   position: absolute;
-  inset: -12% 0;
+  inset: 0;
   /* Mobile-first: art-directed crops per breakpoint (900x1600 / 1200x500 /
-     1920x1080). background-size: contain shows the full photo uncropped,
-     scaled down to fit — never zoomed in, may letterbox against .hero's
-     black background where the container's aspect doesn't exactly match. */
+     1920x1080), each already matching its breakpoint's container aspect,
+     so cover fills edge-to-edge without the earlier zoom problem. */
   background-image: url('/images/hero-mobile.webp');
-  background-size: contain;
+  background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
-  will-change: transform;
 }
 @media (min-width: 768px) {
   .hero-media { background-image: url('/images/hero-tablet.webp'); }

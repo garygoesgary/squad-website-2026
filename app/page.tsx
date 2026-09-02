@@ -1,4 +1,3 @@
-import HeroParallax from "./HeroParallax";
 import MobileNav from "./MobileNav";
 
 export default function Home() {
@@ -6,7 +5,6 @@ export default function Home() {
     <main>
       <section className="hero">
         <div className="hero-media" aria-hidden="true" />
-        <HeroParallax />
 
         <header className="site-header">
           <div className="wrap header-inner">
