@@ -27,7 +27,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: -12% 0;
   background-image: url('/images/squad-image_Chef.webp');
-  background-size: cover;
+  background-size: 100% auto;
   background-position: bottom center;
   background-repeat: no-repeat;
   will-change: transform;
