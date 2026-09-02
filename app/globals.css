@@ -83,15 +83,19 @@ img { max-width: 100%; display: block; }
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--brand-molten-red);
+  background: var(--brand-volcanic-red);
   animation: arrow-bounce 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  transition: background-color 0.2s ease;
+}
+.scroll-arrow:hover {
+  background: var(--brand-molten-red);
 }
 .scroll-arrow svg {
   width: 19px;
   height: 19px;
 }
 .scroll-arrow svg path {
-  stroke: var(--brand-volcanic-red);
+  stroke: var(--brand-white);
 }
 @keyframes arrow-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
