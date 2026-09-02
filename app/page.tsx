@@ -1,4 +1,5 @@
 import HeroParallax from "./HeroParallax";
+import MobileNav from "./MobileNav";
 
 export default function Home() {
   return (
@@ -21,9 +22,10 @@ export default function Home() {
               <a href="#">who we are</a>
               <a href="#">talk to us</a>
             </nav>
-            <a className="btn-outline" href="tel:1300491856">
+            <a className="btn-outline header-cta" href="tel:1300491856">
               Lets Talk: 1300 491 856
             </a>
+            <MobileNav />
           </div>
         </header>
       </section>
