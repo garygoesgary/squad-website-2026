@@ -58,15 +58,15 @@ img { max-width: 100%; display: block; }
   right: 0;
   bottom: 0;
   height: 5.5px;
-  background: var(--brand-molten-red);
+  background: var(--brand-volcanic-red);
   animation: bar-glow 2.4s ease-in-out infinite;
 }
 @keyframes bar-glow {
   0%, 100% {
-    background: var(--brand-molten-red);
+    background: var(--brand-volcanic-red);
   }
   50% {
-    background: var(--brand-burnt-red);
+    background: var(--brand-molten-red);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -83,12 +83,15 @@ img { max-width: 100%; display: block; }
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #d71d23;
-  animation: arrow-bounce 1.6s ease-in-out infinite;
+  background: var(--brand-molten-red);
+  animation: arrow-bounce 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 .scroll-arrow svg {
   width: 19px;
   height: 19px;
+}
+.scroll-arrow svg path {
+  stroke: var(--brand-volcanic-red);
 }
 @keyframes arrow-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }

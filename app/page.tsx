@@ -33,7 +33,6 @@ export default function Home() {
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
               d="M5 8l7 7 7-7"
-              stroke="#fff"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
