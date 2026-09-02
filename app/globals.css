@@ -143,7 +143,12 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 24px;
+  /* Horizontal inset comes from .wrap's padding (78px) — this element
+     carries both classes, so set only padding-top/bottom here.
+     (A "24px 0" shorthand would zero the left/right instead of
+     leaving them unset — use the longhand properties instead.) */
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .logo {
   display: flex;
