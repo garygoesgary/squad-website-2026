@@ -42,6 +42,8 @@ export default function Home() {
         </a>
         <div className="hero-bar" aria-hidden="true" />
       </section>
+
+      <section id="next" className="section-dark-ash" />
     </main>
   );
 }

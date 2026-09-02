@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
+:root {
+  --brand-molten-red: #ff1414;
+  --brand-volcanic-red: #d5121b;
+  --brand-dark-ash: #2e2a2a;
+  --brand-white: #ffffff;
+  --brand-burnt-red: #720008;
+  --brand-dusk-red: #a5000c;
+  --brand-sandstone: #ebe2db;
+  --brand-sand: #fdf7f3;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { max-width: 100vw; overflow-x: hidden; }
 body {
@@ -14,6 +25,11 @@ img { max-width: 100%; display: block; }
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 78px;
+}
+
+.section-dark-ash {
+  min-height: 60vh;
+  background: var(--brand-dark-ash);
 }
 
 /* Hero */
