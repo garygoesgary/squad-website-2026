@@ -5,21 +5,30 @@ import { useEffect } from "react";
 export default function HeroParallax() {
   useEffect(() => {
     const media = document.querySelector<HTMLElement>(".hero-media");
-    if (!media) return;
+    const hero = document.querySelector<HTMLElement>(".hero");
+    if (!media || !hero) return;
 
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (reduceMotion) return;
 
+    // .hero-media's bleed room (from its -12% inset) scales with .hero's
+    // own height, which itself changes across breakpoints (e.g. the
+    // shorter tablet banner) — so the parallax clamp has to be measured,
+    // not a fixed pixel value, or it'll reveal a gap on shorter heroes.
+    let maxOffset = 0;
+
+    function measure() {
+      maxOffset = hero!.getBoundingClientRect().height * 0.12;
+    }
+
     let ticking = false;
 
     function update() {
       ticking = false;
       const scrollY = window.scrollY;
-      // Moves slower than the page (0.25x) and clamps to the bleed room
-      // baked into .hero-media's -12% inset, so no gaps show at the edges.
-      const offset = Math.min(scrollY * 0.25, 120);
+      const offset = Math.min(scrollY * 0.25, maxOffset);
       media!.style.transform = `translate3d(0, ${offset}px, 0)`;
     }
 
@@ -30,9 +39,19 @@ export default function HeroParallax() {
       }
     }
 
+    function onResize() {
+      measure();
+      update();
+    }
+
+    measure();
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   return null;

@@ -43,14 +43,30 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   background: #000;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* The tablet crop (1200x500, ~2.4:1) is a short banner shape, not a
+     full-height one — forcing it to cover a 100vh box on a portrait
+     tablet zooms in far too much. Match the hero's height to the
+     crop's own aspect instead, clamped to a sane range. */
+  .hero { min-height: 0; height: clamp(320px, 42vw, 460px); }
+}
 .hero-media {
   position: absolute;
   inset: -12% 0;
-  background-image: url('/images/squad-image_Chef.webp');
-  background-size: 100% auto;
+  /* Mobile-first: art-directed crops per breakpoint (900x1600 / 1200x500 /
+     1920x1080), not one image squashed to fit — each is pre-cropped to its
+     breakpoint's aspect ratio so `cover` never has to crop awkwardly. */
+  background-image: url('/images/hero-mobile.webp');
+  background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
   will-change: transform;
+}
+@media (min-width: 768px) {
+  .hero-media { background-image: url('/images/hero-tablet.webp'); }
+}
+@media (min-width: 1024px) {
+  .hero-media { background-image: url('/images/squad-image_Chef.webp'); }
 }
 .hero-bar {
   position: absolute;
