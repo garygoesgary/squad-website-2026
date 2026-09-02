@@ -29,16 +29,6 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="hero-content">
-          <p className="hero-headline">
-            Squad Hospitality is here to help you with your Permanent,
-            Temporary or Contract staffing needs.
-          </p>
-          <div className="json-animation-placeholder" aria-hidden="true">
-            <span>Json Animation</span>
-          </div>
-        </div>
-
         <a className="scroll-arrow" href="#next" aria-label="Scroll down">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
