@@ -53,8 +53,22 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   bottom: 0;
-  height: 11px;
-  background: red;
+  height: 5.5px;
+  background: var(--brand-molten-red);
+  animation: bar-glow 2.4s ease-in-out infinite;
+}
+@keyframes bar-glow {
+  0%, 100% {
+    background: var(--brand-molten-red);
+    box-shadow: 0 0 14px 2px rgba(255, 20, 20, 0.8);
+  }
+  50% {
+    background: var(--brand-burnt-red);
+    box-shadow: 0 0 2px 0 rgba(255, 20, 20, 0.15);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-bar { animation: none; }
 }
 .scroll-arrow {
   position: absolute;
