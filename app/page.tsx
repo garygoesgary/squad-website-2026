@@ -4,14 +4,16 @@ export default function Home() {
       <header className="site-header">
         <div className="wrap header-inner">
           <a className="logo" href="#">
-            <img className="logo-badge" src="/images/logo-badge.svg" alt="Squad" />
-            <span className="logo-tag">hospitality talent scouts</span>
+            <img
+              className="logo-lockup"
+              src="/images/squad-logo-lockup-1-line.svg"
+              alt="Squad — hospitality talent scouts"
+            />
           </a>
           <nav className="main-nav">
-            <a href="#">who is Squad</a>
-            <a href="#">Job Seekers</a>
-            <a href="#">Sectors</a>
-            <a href="#">Get in touch</a>
+            <a href="#">what we do</a>
+            <a href="#">who we are</a>
+            <a href="#">talk to us</a>
           </nav>
           <a className="btn-outline" href="tel:1300491856">
             Lets Talk: 1300 491 856
