@@ -50,6 +50,15 @@ img { max-width: 100%; display: block; }
      crop's own aspect instead, clamped to a sane range. */
   .hero { min-height: 0; height: clamp(320px, 42vw, 460px); }
 }
+@media (min-width: 1024px) {
+  /* tudaloo.com.au doesn't lock its hero to 100vh — the box height
+     tracks the photo's own aspect ratio, so `cover` never has to crop
+     hard no matter the viewport height. Same move here: let the
+     desktop hero follow the 1920x1080 photo's 16:9 shape instead of
+     the viewport, clamped so it can't get silly on very short/tall
+     screens. */
+  .hero { min-height: 0; aspect-ratio: 16 / 9; max-height: 90vh; }
+}
 .hero-media {
   position: absolute;
   inset: 0;
