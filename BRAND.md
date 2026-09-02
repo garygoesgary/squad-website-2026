@@ -55,3 +55,7 @@ Nine icons representing Squad's offerings, saved as-is from the desktop into [`p
 - `icon-hotel-and-resorts.svg`
 
 150×150 viewBox, single-colour (black) line/fill icons with no colour styling applied — recolour via CSS `fill` when used, don't assume a colour.
+
+# Photography
+
+[`public/images/squad-image_Chef.webp`](public/images/squad-image_Chef.webp) — chef plating in a dark restaurant kitchen, from the desktop upload (`squad-image_Chef.webp`). 1920×1080.
