@@ -34,4 +34,4 @@ Pull directly from Figma variables again with `get_variable_defs` if the Playboo
 
 [`public/images/squad-logo-variants-sheet.svg`](public/images/squad-logo-variants-sheet.svg) — saved from `Squad-logo-2026.svg` on the desktop.
 
-This is a full lockup sheet, not a single ready-to-use mark: it contains several variants at different scales in one file — the red-badge/white-wordmark lockup, a reversed dark-text-on-light version, and a small "s." monogram icon. Before wiring the logo into the header, pull out and isolate the specific variant to use (which one depends on the nav background — light needs the dark/red-on-light version, dark/photo backgrounds need the white-on-red badge).
+This is a full lockup sheet, not a single ready-to-use mark: it contains several variants at different scales in one file — the red-badge/white-wordmark lockup, a reversed dark-text-on-light version, and a small "s." monogram icon. Which variant goes where is not decided automatically — use whichever one is uploaded/specified for a given placement.
