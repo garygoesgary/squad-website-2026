@@ -54,10 +54,11 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: -12% 0;
   /* Mobile-first: art-directed crops per breakpoint (900x1600 / 1200x500 /
-     1920x1080), not one image squashed to fit — each is pre-cropped to its
-     breakpoint's aspect ratio so `cover` never has to crop awkwardly. */
+     1920x1080). background-size: contain shows the full photo uncropped,
+     scaled down to fit — never zoomed in, may letterbox against .hero's
+     black background where the container's aspect doesn't exactly match. */
   background-image: url('/images/hero-mobile.webp');
-  background-size: cover;
+  background-size: contain;
   background-position: bottom center;
   background-repeat: no-repeat;
   will-change: transform;
