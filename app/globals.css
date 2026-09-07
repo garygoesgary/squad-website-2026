@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   --brand-molten-red: #ff1414;
@@ -592,6 +592,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
+  font-weight: 300;
   font-size: 16px;
   line-height: 1.15;
   color: var(--brand-white);
@@ -610,6 +611,7 @@ img { max-width: 100%; display: block; }
   max-width: 1100px;
   margin-top: 64px;
   font-family: 'Inter', sans-serif;
+  font-weight: 300;
   font-size: 11px;
   line-height: 1.25;
   color: var(--brand-white);
@@ -618,6 +620,7 @@ img { max-width: 100%; display: block; }
 .footer-copyright {
   margin-top: 24px;
   font-family: 'Inter', sans-serif;
+  font-weight: 300;
   font-size: 11px;
   color: var(--brand-white);
   opacity: 0.85;
