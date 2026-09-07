@@ -155,6 +155,16 @@ img { max-width: 100%; display: block; }
 @media (min-width: 1024px) {
   .hero-media { background-image: url('/images/squad-image_Chef.webp'); }
 }
+.hero-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(500px, 60%);
+  aspect-ratio: 870 / 312;
+  z-index: 5;
+  pointer-events: none;
+}
 .hero-bar {
   position: absolute;
   left: 0;

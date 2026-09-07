@@ -1,11 +1,13 @@
 import SiteHeader from "./SiteHeader";
 import ClientsCarousel from "./ClientsCarousel";
+import HeroAnimation from "./HeroAnimation";
 
 export default function Home() {
   return (
     <main>
       <section className="hero">
         <div className="hero-media" aria-hidden="true" />
+        <HeroAnimation />
 
         <SiteHeader />
 
