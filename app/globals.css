@@ -587,7 +587,7 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.15;
   color: var(--brand-white);
 }
 .footer-contact {
@@ -605,7 +605,7 @@ img { max-width: 100%; display: block; }
   margin-top: 64px;
   font-family: 'Inter', sans-serif;
   font-size: 11px;
-  line-height: 1.5;
+  line-height: 1.25;
   color: var(--brand-white);
   opacity: 0.85;
 }
