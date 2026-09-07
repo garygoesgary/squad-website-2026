@@ -345,6 +345,15 @@ img { max-width: 100%; display: block; }
   z-index: 5;
   pointer-events: none;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* The tablet hero is a short banner (clamp(320px, 42vw, 460px) —
+     see .hero above), not the tall desktop/mobile box. An 850px-wide
+     animation + description no longer fits that height without
+     colliding with the fixed nav above and the scroll arrow below —
+     shrink the whole content block down to match. */
+  .hero-content { width: min(420px, 70%); gap: 12px; }
+  .hero-description { font-size: 14px; }
+}
 .hero-animation {
   /* 70% bigger than the original min(500px, 60%) */
   width: 100%;
@@ -595,7 +604,7 @@ img { max-width: 100%; display: block; }
   max-width: 1100px;
   margin-top: 64px;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 11px;
   line-height: 1.5;
   color: var(--brand-white);
   opacity: 0.85;
@@ -603,7 +612,7 @@ img { max-width: 100%; display: block; }
 .footer-copyright {
   margin-top: 24px;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 11px;
   color: var(--brand-white);
   opacity: 0.85;
 }
