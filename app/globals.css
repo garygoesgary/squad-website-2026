@@ -77,11 +77,17 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 24px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  /* Reserve half a card's worth of empty space on each side so the
-     first and last cells can still scroll all the way to centre. */
+  /* Auto-scroll drives scrollLeft directly every frame — smooth
+     scroll-behavior would fight/lag those per-frame updates. */
+  scroll-behavior: auto;
+  cursor: grab;
+  /* Centres the first card at rest (scrollLeft 0), before the
+     auto-scroll loop has moved anything. */
   padding: 0 calc(50% - 110px);
   scrollbar-width: none;
+}
+.carousel-track:active {
+  cursor: grabbing;
 }
 .carousel-track::-webkit-scrollbar {
   display: none;
@@ -89,7 +95,6 @@ img { max-width: 100%; display: block; }
 .carousel-cell {
   flex: 0 0 220px;
   height: 130px;
-  scroll-snap-align: center;
   display: flex;
   align-items: center;
   justify-content: center;

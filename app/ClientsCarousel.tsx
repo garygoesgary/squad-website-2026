@@ -14,6 +14,13 @@ const clients = [
   { name: "DAP & Co.", src: "/images/clients/dap-and-co.svg" },
 ];
 
+// Rendered twice back-to-back so the track can scroll seamlessly from
+// the end of the first set into the identical start of the second,
+// then silently wrap back — the "never-ending" loop illusion.
+const loopedClients = [...clients, ...clients];
+
+const PIXELS_PER_SECOND = 40;
+
 export default function ClientsCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -24,10 +31,7 @@ export default function ClientsCarousel() {
       track.querySelectorAll<HTMLElement>(".carousel-cell")
     );
 
-    // Cheap enough (9 cells, plain rect math) to run straight off the
-    // scroll event — no rAF batching needed, which also sidesteps rAF
-    // getting suspended on a backgrounded/hidden document.
-    const update = () => {
+    const updateActive = () => {
       const trackRect = track.getBoundingClientRect();
       const center = trackRect.left + trackRect.width / 2;
 
@@ -46,12 +50,57 @@ export default function ClientsCarousel() {
       }
     };
 
-    update();
-    track.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
+    // Width of one full (non-duplicated) set of cards, measured from the
+    // DOM rather than computed from CSS values — the first cell of the
+    // second copy sits exactly one set-width along the scrollable track.
+    const oneSetWidth = cells[clients.length]?.offsetLeft ?? 0;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    let paused = reduceMotion;
+    let lastTime: number | null = null;
+    let rafId = 0;
+
+    const tick = (time: number) => {
+      rafId = requestAnimationFrame(tick);
+      if (lastTime === null) lastTime = time;
+      const dt = (time - lastTime) / 1000;
+      lastTime = time;
+
+      if (!paused && oneSetWidth > 0) {
+        track.scrollLeft += PIXELS_PER_SECOND * dt;
+        if (track.scrollLeft >= oneSetWidth) {
+          track.scrollLeft -= oneSetWidth;
+        }
+      }
+      updateActive();
+    };
+
+    const pause = () => {
+      paused = true;
+    };
+    const resume = () => {
+      if (!reduceMotion) paused = false;
+    };
+
+    track.addEventListener("pointerdown", pause);
+    track.addEventListener("pointerup", resume);
+    track.addEventListener("pointerleave", resume);
+    track.addEventListener("mouseenter", pause);
+    track.addEventListener("mouseleave", resume);
+
+    updateActive();
+    rafId = requestAnimationFrame(tick);
+
     return () => {
-      track.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+      cancelAnimationFrame(rafId);
+      track.removeEventListener("pointerdown", pause);
+      track.removeEventListener("pointerup", resume);
+      track.removeEventListener("pointerleave", resume);
+      track.removeEventListener("mouseenter", pause);
+      track.removeEventListener("mouseleave", resume);
     };
   }, []);
 
@@ -59,8 +108,8 @@ export default function ClientsCarousel() {
     <div className="clients-carousel">
       <p className="clients-carousel-label">Trusted by</p>
       <div className="carousel-track" ref={trackRef}>
-        {clients.map((client) => (
-          <div className="carousel-cell" key={client.name}>
+        {loopedClients.map((client, i) => (
+          <div className="carousel-cell" key={`${client.name}-${i}`}>
             <img src={client.src} alt={client.name} />
           </div>
         ))}
