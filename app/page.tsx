@@ -2,6 +2,7 @@ import SiteHeader from "./SiteHeader";
 import ClientsCarousel from "./ClientsCarousel";
 import HeroAnimation from "./HeroAnimation";
 import ContactForm from "./ContactForm";
+import ImageGallery from "./ImageGallery";
 
 export default function Home() {
   return (
@@ -48,6 +49,8 @@ export default function Home() {
         role="img"
         aria-label="Billboard reading 'Brisbane we got you' — Squad, hospitality talent scouts"
       />
+
+      <ImageGallery />
 
       <section id="contact" className="section-contact">
         <ContactForm />

@@ -58,20 +58,6 @@ export default function ContactForm() {
         </div>
 
         <div className="contact-field">
-          <label htmlFor="iam" className="sr-only">
-            I am
-          </label>
-          <select id="iam" name="iam" defaultValue="" required>
-            <option value="" disabled>
-              I am...*
-            </option>
-            <option value="employer">Looking to hire</option>
-            <option value="candidate">Looking for work</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-
-        <div className="contact-field">
           <label htmlFor="message" className="sr-only">
             Message
           </label>
