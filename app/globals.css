@@ -576,11 +576,16 @@ img { max-width: 100%; display: block; }
 .footer-addresses {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.4;
   color: var(--brand-white);
+}
+.footer-contact {
+  gap: 4px;
+}
+.footer-addresses {
+  gap: 20px;
 }
 .footer-contact a {
   color: var(--brand-white);
