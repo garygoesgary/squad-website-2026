@@ -7,7 +7,14 @@ export default function Home() {
     <main>
       <section className="hero">
         <div className="hero-media" aria-hidden="true" />
-        <HeroAnimation />
+        <div className="hero-content">
+          <HeroAnimation />
+          <p className="hero-description">
+            Squad Hospitality is here to help you with your
+            <br />
+            Permanent, Temporary or Contract staffing needs.
+          </p>
+        </div>
 
         <SiteHeader />
 
@@ -28,11 +35,6 @@ export default function Home() {
         <p className="section-dark-ash-copy">
           Squad recognises talent—helping you recruit the best, from top
           first-class chefs, to hard-working shift workers.
-        </p>
-        <p className="section-dark-ash-description">
-          Squad Hospitality is here to help you with your
-          <br />
-          Permanent, Temporary or Contract staffing needs.
         </p>
       </section>
 
