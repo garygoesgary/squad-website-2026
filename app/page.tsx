@@ -48,6 +48,8 @@ export default function Home() {
 
         <ImageGallery />
 
+        <section className="section-molten-red" />
+
         <section
           className="section-billboard"
           role="img"
