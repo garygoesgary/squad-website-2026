@@ -41,6 +41,8 @@ export default function Home() {
       </section>
 
       <section id="next" className="section-dark-ash" />
+
+      <section className="section-sand" />
     </main>
   );
 }
