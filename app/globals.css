@@ -566,7 +566,7 @@ img { max-width: 100%; display: block; }
 
 /* Footer (Figma node 80:1652) */
 .site-footer {
-  background: var(--brand-dark-ash);
+  background: #101010;
 }
 .footer-inner {
   padding: 80px 78px 40px;
