@@ -44,13 +44,13 @@ export default function Home() {
         <ClientsCarousel />
       </section>
 
+      <ImageGallery />
+
       <section
         className="section-billboard"
         role="img"
         aria-label="Billboard reading 'Brisbane we got you' — Squad, hospitality talent scouts"
       />
-
-      <ImageGallery />
 
       <section id="contact" className="section-contact">
         <ContactForm />
