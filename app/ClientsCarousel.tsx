@@ -78,6 +78,8 @@ export default function ClientsCarousel() {
       updateActive();
     };
 
+    // Only an actual drag pauses the auto-scroll (so it isn't fighting
+    // the user's own scrollLeft changes) — hovering never stops it.
     const pause = () => {
       paused = true;
     };
@@ -88,8 +90,6 @@ export default function ClientsCarousel() {
     track.addEventListener("pointerdown", pause);
     track.addEventListener("pointerup", resume);
     track.addEventListener("pointerleave", resume);
-    track.addEventListener("mouseenter", pause);
-    track.addEventListener("mouseleave", resume);
 
     updateActive();
     rafId = requestAnimationFrame(tick);
@@ -99,8 +99,6 @@ export default function ClientsCarousel() {
       track.removeEventListener("pointerdown", pause);
       track.removeEventListener("pointerup", resume);
       track.removeEventListener("pointerleave", resume);
-      track.removeEventListener("mouseenter", pause);
-      track.removeEventListener("mouseleave", resume);
     };
   }, []);
 

@@ -81,9 +81,10 @@ img { max-width: 100%; display: block; }
      scroll-behavior would fight/lag those per-frame updates. */
   scroll-behavior: auto;
   cursor: grab;
-  /* Centres the first card at rest (scrollLeft 0), before the
-     auto-scroll loop has moved anything. */
-  padding: 0 calc(50% - 110px);
+  /* Starts flush left — the first card sits at the track's own left
+     edge at rest (scrollLeft 0), not centred. 78px matches the site's
+     other side margins (.wrap). */
+  padding: 0 78px;
   scrollbar-width: none;
 }
 .carousel-track:active {
