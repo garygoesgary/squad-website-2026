@@ -558,7 +558,9 @@ img { max-width: 100%; display: block; }
   font-size: 13px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
+  /* Mobile only — tablet (768-1023px) keeps the full desktop-style
+     nav links/button rather than collapsing to the hamburger. */
   .main-nav,
   .header-cta {
     display: none;
