@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   --brand-molten-red: #ff1414;
@@ -13,7 +13,7 @@
   /* Serif stand-in for Season Serif (Figma trial font, not licensed for
      web embedding) — used for headline/display copy wherever the
      design calls for serif treatment. Body/UI text stays on Inter. */
-  --font-serif: 'Spectral', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
