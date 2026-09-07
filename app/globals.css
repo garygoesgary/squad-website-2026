@@ -159,7 +159,7 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 4px 0 13px;
+  padding: 3px 0 10px;
   background: rgba(0, 0, 0, 0);
   transition: background-color 0.25s ease;
 }
@@ -178,15 +178,15 @@ img { max-width: 100%; display: block; }
      carries both classes, so set only padding-top/bottom here.
      (A "24px 0" shorthand would zero the left/right instead of
      leaving them unset — use the longhand properties instead.) */
-  padding-top: 17px;
-  padding-bottom: 17px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 .logo {
   display: flex;
   align-items: center;
 }
 .logo-lockup {
-  height: 34px;
+  height: 27px;
   width: auto;
 }
 .main-nav {
