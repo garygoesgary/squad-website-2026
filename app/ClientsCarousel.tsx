@@ -4,13 +4,17 @@ import { useEffect, useRef } from "react";
 
 const clients = [
   { name: "Agnes", src: "/images/clients/agnes.png" },
-  { name: "The Calile Hotel", src: "/images/clients/calile.png" },
+  { name: "The Calile Hotel", src: "/images/clients/calile.png", large: true },
   { name: "The Star Entertainment Group", src: "/images/clients/star.svg" },
-  { name: "Discovery Holiday Parks", src: "/images/clients/discovery.png" },
+  {
+    name: "Discovery Holiday Parks",
+    src: "/images/clients/discovery.png",
+    large: true,
+  },
   { name: "EVT", src: "/images/clients/evt.png" },
-  { name: "W Hotels", src: "/images/clients/w-hotels.svg" },
+  { name: "W Hotels", src: "/images/clients/w-hotels.svg", large: true },
   { name: "Crystalbrook Collection", src: "/images/clients/crystalbrook.png" },
-  { name: "Waymark Hotels", src: "/images/clients/waymark.png" },
+  { name: "Waymark Hotels", src: "/images/clients/waymark.png", large: true },
   { name: "DAP & Co.", src: "/images/clients/dap-and-co.svg" },
 ];
 
@@ -87,7 +91,11 @@ export default function ClientsCarousel() {
       <div className="carousel-track" ref={trackRef}>
         {loopedClients.map((client, i) => (
           <div className="carousel-cell" key={`${client.name}-${i}`}>
-            <img src={client.src} alt={client.name} />
+            <img
+              src={client.src}
+              alt={client.name}
+              className={client.large ? "is-larger" : undefined}
+            />
           </div>
         ))}
       </div>
