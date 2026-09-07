@@ -22,13 +22,13 @@ export default function MobileNav() {
       {open && (
         <div className="mobile-nav-panel">
           <a href="#" onClick={() => setOpen(false)}>
-            what we do
+            Who is Squad
           </a>
           <a href="#" onClick={() => setOpen(false)}>
-            who we are
+            Our Sectors
           </a>
           <a href="#" onClick={() => setOpen(false)}>
-            talk to us
+            Get in touch
           </a>
           <a
             className="btn-outline"

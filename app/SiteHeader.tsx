@@ -40,15 +40,17 @@ export default function SiteHeader() {
       <div className="wrap header-inner">
         <a className="logo" href="#">
           <img
-            className="logo-lockup"
-            src="/images/squad-logo-lockup-1-line.svg"
-            alt="Squad — hospitality talent scouts"
+            className="logo-badge"
+            src="/images/logo-badge.svg"
+            alt="Squad"
           />
         </a>
         <nav className="main-nav">
-          <a href="#">what we do</a>
-          <a href="#">who we are</a>
-          <a href="#">talk to us</a>
+          <a href="#">Who is Squad</a>
+          <a href="#" className="weight-medium">
+            Our Sectors
+          </a>
+          <a href="#">Get in touch</a>
         </nav>
         <a className="btn-outline header-cta" href="tel:1300491856">
           Lets Talk: 1300 491 856
