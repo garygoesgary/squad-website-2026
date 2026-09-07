@@ -159,7 +159,15 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 6px 0 18px;
+  padding: 4px 0 13px;
+  background: rgba(0, 0, 0, 0);
+  transition: background-color 0.25s ease;
+}
+.site-header.is-scrolled {
+  /* Once the hero photo has scrolled out from behind the fixed nav,
+     give it its own backing so it stays legible over whatever
+     section (dark-ash, sand, etc.) is underneath it now. */
+  background: rgba(0, 0, 0, 0.4);
 }
 .header-inner {
   position: relative;
@@ -170,15 +178,15 @@ img { max-width: 100%; display: block; }
      carries both classes, so set only padding-top/bottom here.
      (A "24px 0" shorthand would zero the left/right instead of
      leaving them unset — use the longhand properties instead.) */
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 .logo {
   display: flex;
   align-items: center;
 }
 .logo-lockup {
-  height: 48.44px;
+  height: 34px;
   width: auto;
 }
 .main-nav {
