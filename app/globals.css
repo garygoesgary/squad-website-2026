@@ -178,7 +178,8 @@ img { max-width: 100%; display: block; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(500px, 60%);
+  /* 70% bigger than the original min(500px, 60%) */
+  width: min(850px, 100%);
   aspect-ratio: 870 / 312;
   z-index: 5;
   pointer-events: none;
