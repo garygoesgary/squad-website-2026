@@ -31,25 +31,6 @@ export default function ClientsCarousel() {
       track.querySelectorAll<HTMLElement>(".carousel-cell")
     );
 
-    const updateActive = () => {
-      const trackRect = track.getBoundingClientRect();
-      const center = trackRect.left + trackRect.width / 2;
-
-      let closest: HTMLElement | null = null;
-      let closestDist = Infinity;
-      for (const cell of cells) {
-        const r = cell.getBoundingClientRect();
-        const dist = Math.abs(r.left + r.width / 2 - center);
-        if (dist < closestDist) {
-          closestDist = dist;
-          closest = cell;
-        }
-      }
-      for (const cell of cells) {
-        cell.classList.toggle("is-active", cell === closest);
-      }
-    };
-
     // Width of one full (non-duplicated) set of cards, measured from the
     // DOM rather than computed from CSS values — the first cell of the
     // second copy sits exactly one set-width along the scrollable track.
@@ -75,7 +56,6 @@ export default function ClientsCarousel() {
           track.scrollLeft -= oneSetWidth;
         }
       }
-      updateActive();
     };
 
     // Only an actual drag pauses the auto-scroll (so it isn't fighting
@@ -91,7 +71,6 @@ export default function ClientsCarousel() {
     track.addEventListener("pointerup", resume);
     track.addEventListener("pointerleave", resume);
 
-    updateActive();
     rafId = requestAnimationFrame(tick);
 
     return () => {
