@@ -429,7 +429,7 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 2px 0 8px;
+  padding: 2px 0 6px;
   background: rgba(0, 0, 0, 0);
   transition: background-color 0.25s ease;
 }
@@ -443,31 +443,31 @@ img { max-width: 100%; display: block; }
   position: relative;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   /* Matches Figma node 78:403's nav frame (~20-42px left, 40px right)
      rather than the rest of the page's 78px .wrap margin — this
      element carries both classes, so override .wrap's padding fully
      (horizontal and vertical) instead of just adding to it. */
-  padding: 13px 40px;
+  padding: 10px 30px;
 }
 .logo {
   display: flex;
   align-items: center;
 }
 .logo-badge {
-  height: 38px;
+  height: 44px;
   width: auto;
 }
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   margin-left: auto;
 }
 .main-nav a {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
   white-space: nowrap;
 }
@@ -478,10 +478,10 @@ img { max-width: 100%; display: block; }
   display: inline-block;
   border: 1px solid #fff;
   border-radius: 100px;
-  padding: 11px 24px;
+  padding: 8px 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 11px;
   letter-spacing: 0.15px;
   color: #fff;
   white-space: nowrap;
@@ -541,6 +541,7 @@ img { max-width: 100%; display: block; }
   color: #fff;
 }
 .mobile-nav-panel .btn-outline {
+  padding: 11px 24px;
   font-size: 13px;
 }
 
