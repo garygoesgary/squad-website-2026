@@ -1,4 +1,5 @@
 import SiteHeader from "./SiteHeader";
+import ClientsCarousel from "./ClientsCarousel";
 
 export default function Home() {
   return (
@@ -28,7 +29,9 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="section-sand" />
+      <section className="section-sand">
+        <ClientsCarousel />
+      </section>
     </main>
   );
 }

@@ -59,6 +59,62 @@ img { max-width: 100%; display: block; }
   scroll-margin-top: 120px;
 }
 
+/* Clients carousel (Figma node 78:299) */
+.clients-carousel {
+  padding: 80px 0;
+}
+.clients-carousel-label {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--brand-dark-ash);
+  opacity: 0.55;
+  margin-bottom: 32px;
+}
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Reserve half a card's worth of empty space on each side so the
+     first and last cells can still scroll all the way to centre. */
+  padding: 0 calc(50% - 110px);
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+.carousel-cell {
+  flex: 0 0 220px;
+  height: 130px;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+.carousel-cell.is-active {
+  opacity: 1;
+}
+.carousel-cell img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-cell { transition: none; }
+}
+
 /* Hero */
 .hero {
   position: relative;

@@ -62,3 +62,10 @@ Nine icons representing Squad's offerings, saved as-is from the desktop into [`p
 # Photography
 
 [`public/images/squad-image_Chef.webp`](public/images/squad-image_Chef.webp) — chef plating in a dark restaurant kitchen, from the desktop upload (`squad-image_Chef.webp`). 1920×1080.
+
+# Client logos
+
+[`public/images/clients/`](public/images/clients/) — pulled from the "Website" Figma file's clients carousel (node 78:299), used by [ClientsCarousel.tsx](app/ClientsCarousel.tsx). All are the designer's real placed assets (Figma's own exports), not re-sourced independently:
+
+- `agnes.png`, `calile.png`, `evt.png`, `discovery.png`, `crystalbrook.png`, `waymark.png` — raster (transparent background)
+- `star.svg`, `w-hotels.svg`, `dap-and-co.svg` — real vector exports (stripped of the card background/blur baked into Figma's export, so they layer cleanly under the site's own `.carousel-cell` glass-card styling)
