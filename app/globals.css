@@ -106,7 +106,7 @@ img { max-width: 100%; display: block; }
 .gallery-cell {
   flex: 0 0 500px;
   height: 450px;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
 }
 .gallery-cell img {
@@ -130,7 +130,7 @@ img { max-width: 100%; display: block; }
 }
 .contact-heading {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 300;
   font-size: 40px;
   color: var(--brand-volcanic-red);
   margin-bottom: 20px;
@@ -312,9 +312,8 @@ img { max-width: 100%; display: block; }
      tracks the photo's own aspect ratio, so `cover` never has to crop
      hard no matter the viewport height. Same move here: let the
      desktop hero follow the 1920x1080 photo's 16:9 shape instead of
-     the viewport, clamped so it can't get silly on very short/tall
-     screens. */
-  .hero { min-height: 0; aspect-ratio: 16 / 9; max-height: 90vh; }
+     the viewport — purely width-driven, no height ceiling. */
+  .hero { min-height: 0; aspect-ratio: 16 / 9; }
 }
 .hero-media {
   position: absolute;
@@ -564,10 +563,9 @@ img { max-width: 100%; display: block; }
 }
 .footer-tagline {
   margin-top: 32px;
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: 27px;
-  color: var(--brand-white);
+  height: 27px;
+  width: auto;
+  display: block;
 }
 .footer-columns {
   display: flex;
@@ -580,7 +578,7 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   gap: 20px;
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
   color: var(--brand-white);
 }

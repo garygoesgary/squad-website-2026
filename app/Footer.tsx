@@ -8,7 +8,11 @@ export default function Footer() {
           alt="Squad"
         />
 
-        <p className="footer-tagline">we love your work.</p>
+        <img
+          className="footer-tagline"
+          src="/images/footer-tagline.svg"
+          alt="we love your work."
+        />
 
         <div className="footer-columns">
           <div className="footer-contact">
