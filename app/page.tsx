@@ -41,6 +41,12 @@ export default function Home() {
       <section className="section-sand">
         <ClientsCarousel />
       </section>
+
+      <section
+        className="section-billboard"
+        role="img"
+        aria-label="Billboard reading 'Brisbane we got you' — Squad, hospitality talent scouts"
+      />
     </main>
   );
 }
