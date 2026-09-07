@@ -435,14 +435,14 @@ img { max-width: 100%; display: block; }
   right: 0;
   z-index: 50;
   padding: 2px 0 6px;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(114, 0, 8, 0);
   transition: background-color 0.25s ease;
 }
 .site-header.is-scrolled {
   /* Once the hero photo has scrolled out from behind the fixed nav,
      give it its own backing so it stays legible over whatever
      section (dark-ash, sand, etc.) is underneath it now. */
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(114, 0, 8, 0.9);
 }
 .header-inner {
   position: relative;
