@@ -90,7 +90,7 @@ img { max-width: 100%; display: block; }
 }
 /* Scrolling image gallery */
 .image-gallery {
-  padding: 60px 0;
+  padding: 60px 0 0;
   background: var(--brand-sand);
 }
 .gallery-track {
