@@ -48,7 +48,13 @@ export default function Home() {
 
         <ImageGallery />
 
-        <section className="section-molten-red" />
+        <section className="section-molten-red">
+          <img
+            className="molten-red-heading"
+            src="/images/molten-red-heading.svg"
+            alt="From fine luxurious venues to your regular regional spots, we know hospitality and we are long standing friends of the industry."
+          />
+        </section>
 
         <section
           className="section-billboard"

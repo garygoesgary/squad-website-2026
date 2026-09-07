@@ -65,6 +65,14 @@ img { max-width: 100%; display: block; }
 .section-molten-red {
   min-height: 60vh;
   background: #d71d23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+.molten-red-heading {
+  width: min(764px, 100%);
+  height: auto;
 }
 
 /* Billboard mockup (Figma node 25:447) */
