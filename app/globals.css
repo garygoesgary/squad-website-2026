@@ -95,7 +95,7 @@ img { max-width: 100%; display: block; }
 }
 .gallery-track {
   display: flex;
-  gap: 3px;
+  gap: 0;
   overflow-x: auto;
   scroll-behavior: auto;
   cursor: grab;
