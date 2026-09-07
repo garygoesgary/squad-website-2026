@@ -40,7 +40,12 @@ export default function Home() {
         <div className="hero-bar" aria-hidden="true" />
       </section>
 
-      <section id="next" className="section-dark-ash" />
+      <section id="next" className="section-dark-ash">
+        <p className="section-dark-ash-copy">
+          Squad recognises talent—helping you recruit the best, from top
+          first-class chefs, to hard-working shift workers.
+        </p>
+      </section>
 
       <section className="section-sand" />
     </main>
