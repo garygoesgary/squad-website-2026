@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
+/* Season Mix — self-hosted web font supplied by the client. Only the
+   Regular (400) weight was provided, so any other weight requested
+   (e.g. the 300 used on some headings) resolves to this face. */
+@font-face {
+  font-family: 'Season Mix';
+  src: url('/fonts/SeasonMix-Regular.woff2') format('woff2'),
+       url('/fonts/SeasonMix-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --brand-molten-red: #ff1414;
   --brand-volcanic-red: #d5121b;
@@ -10,10 +22,11 @@
   --brand-sandstone: #ebe2db;
   --brand-sand: #fdf7f3;
 
-  /* Serif stand-in for Season Serif (Figma trial font, not licensed for
-     web embedding) — used for headline/display copy wherever the
-     design calls for serif treatment. Body/UI text stays on Inter. */
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  /* Serif for headline/display copy wherever the design calls for it.
+     Season Mix (self-hosted, see @font-face above) is the real brand
+     face; Cormorant Garamond stays in the stack as the fallback while
+     it loads / if it ever fails. Body/UI text stays on Inter. */
+  --font-serif: 'Season Mix', 'Cormorant Garamond', Georgia, serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
