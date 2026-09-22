@@ -42,7 +42,7 @@ export default function Home() {
             hard-working kitchen shift workers. Long term, short term and
             everything in between.
           </p>
-          <a href="#" className="section-intro-button reveal reveal-delay-1">
+          <a href="#next" className="section-intro-button reveal reveal-delay-1">
             Helping in these areas
           </a>
         </section>

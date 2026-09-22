@@ -303,7 +303,7 @@ img { max-width: 100%; display: block; }
 .clients-carousel-label {
   text-align: center;
   font-family: var(--font-serif);
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 400;
   letter-spacing: 0.4px;
   color: var(--brand-dark-ash);
