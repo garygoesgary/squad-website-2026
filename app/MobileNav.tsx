@@ -22,10 +22,7 @@ export default function MobileNav() {
       {open && (
         <div className="mobile-nav-panel">
           <a href="#" onClick={() => setOpen(false)}>
-            Who is Squad
-          </a>
-          <a href="#" onClick={() => setOpen(false)}>
-            Our Sectors
+            Our Services
           </a>
           <a href="#" onClick={() => setOpen(false)}>
             Get in touch

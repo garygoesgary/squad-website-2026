@@ -492,13 +492,10 @@ img { max-width: 100%; display: block; }
 }
 .main-nav a {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 16px;
   color: #fff;
   white-space: nowrap;
-}
-.main-nav a.weight-medium {
-  font-weight: 500;
 }
 .btn-outline {
   display: inline-block;
@@ -507,8 +504,8 @@ img { max-width: 100%; display: block; }
   padding: 8px 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 11px;
-  letter-spacing: 0.15px;
+  font-size: 16px;
+  letter-spacing: 0.16px;
   color: #fff;
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;

@@ -46,10 +46,7 @@ export default function SiteHeader() {
           />
         </a>
         <nav className="main-nav">
-          <a href="#">Who is Squad</a>
-          <a href="#" className="weight-medium">
-            Our Sectors
-          </a>
+          <a href="#">Our Services</a>
           <a href="#">Get in touch</a>
         </nav>
         <a className="btn-outline header-cta" href="tel:1300491856">
