@@ -591,6 +591,9 @@ img { max-width: 100%; display: block; }
 .footer-inner {
   padding: 80px 78px 40px;
 }
+.footer-logo-link {
+  display: inline-block;
+}
 .footer-logo {
   height: 35px;
   width: auto;

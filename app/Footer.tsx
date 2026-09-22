@@ -2,11 +2,17 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="wrap footer-inner">
-        <img
-          className="footer-logo"
-          src="/images/logo-badge.svg"
-          alt="Squad"
-        />
+        <a
+          href="#"
+          className="footer-logo-link"
+          aria-label="Back to top"
+        >
+          <img
+            className="footer-logo"
+            src="/images/logo-badge.svg"
+            alt="Squad"
+          />
+        </a>
 
         <img
           className="footer-tagline"
