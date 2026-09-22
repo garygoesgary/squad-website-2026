@@ -48,6 +48,44 @@ img { max-width: 100%; display: block; }
   padding: 0 78px;
 }
 
+/* Intro section (Figma node 117:1314) */
+.section-intro {
+  background: var(--brand-sand);
+  padding: 100px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.section-intro-copy {
+  max-width: 763px;
+  color: #000;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.275;
+  text-align: center;
+}
+.section-intro-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 32px;
+  border-radius: 25px;
+  background: #d71d23;
+  color: var(--brand-white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.section-intro-button:hover {
+  background: var(--brand-molten-red);
+  transform: translateY(-2px);
+}
+
 .section-dark-ash {
   min-height: 60vh;
   background: var(--brand-dark-ash);

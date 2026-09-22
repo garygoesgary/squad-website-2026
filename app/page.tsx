@@ -35,6 +35,18 @@ export default function Home() {
           <div className="hero-bar" aria-hidden="true" />
         </section>
 
+        <section className="section-intro">
+          <p className="section-intro-copy">
+            Squad is the hospitality staffing specialist. Helping you
+            recruit the best staff, from top first-class managers, to
+            hard-working kitchen shift workers. Long term, short term and
+            everything in between.
+          </p>
+          <a href="#" className="section-intro-button">
+            Helping in these areas
+          </a>
+        </section>
+
         <section id="next" className="section-dark-ash">
           <p className="section-dark-ash-copy">
             Squad recognises talent—helping you recruit the best, from top
