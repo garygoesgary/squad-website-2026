@@ -58,7 +58,7 @@ export default function Home() {
         <section
           className="section-billboard"
           role="img"
-          aria-label="Billboard reading 'Brisbane we got you' — Squad, hospitality talent scouts"
+          aria-label="Billboard reading 'Your story starts here' — Squad, hospitality talent scouts"
         />
 
         <section id="contact" className="section-contact">

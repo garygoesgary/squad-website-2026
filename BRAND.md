@@ -67,7 +67,7 @@ Hero photo, source `Squad-Chef-2.png` (chef in a dark restaurant kitchen, liftin
 - [`public/images/hero-tablet.webp`](public/images/hero-tablet.webp) — tablet, 1200×500 (banner)
 - [`public/images/hero-mobile.webp`](public/images/hero-mobile.webp) — mobile, 900×1600 (portrait, centred on the chef)
 
-[`public/images/billboard-brisbane.webp`](public/images/billboard-brisbane.webp) — "BRISBANE WE GOT YOU" billboard mockup on a brick wall, from the Website Figma file's billboard section (node 25:447). 2000×1390 source, displayed full-bleed via `background-size: cover` at a 1440:740 aspect ratio, matching the design's frame.
+[`public/images/billboard-street.webp`](public/images/billboard-street.webp) — "YOUR STORY STARTS HERE" billboard mockup on a brick wall (same street photo location as the earlier "Brisbane we got you" version, replaced 2026-09-22). 2000×1390 source, displayed full-bleed via `background-size: cover` at a 1440:740 aspect ratio, matching the design's frame.
 
 # Client logos
 

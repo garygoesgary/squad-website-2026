@@ -128,7 +128,6 @@ img { max-width: 100%; display: block; }
 }
 
 .section-sand {
-  min-height: 60vh;
   background: var(--brand-sand);
   scroll-margin-top: 120px;
 }
@@ -136,7 +135,7 @@ img { max-width: 100%; display: block; }
 /* Billboard mockup (Figma node 25:447) */
 .section-billboard {
   aspect-ratio: 1440 / 740;
-  background-image: url('/images/billboard-brisbane.webp');
+  background-image: url('/images/billboard-street.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -268,7 +267,7 @@ img { max-width: 100%; display: block; }
 
 /* Clients carousel (Figma node 78:299) */
 .clients-carousel {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 .clients-carousel-label {
   text-align: center;
