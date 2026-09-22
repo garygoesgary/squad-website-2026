@@ -51,7 +51,7 @@ img { max-width: 100%; display: block; }
 /* Intro section (Figma node 117:1314) */
 .section-intro {
   background: var(--brand-sand);
-  padding: 100px 24px;
+  padding: 100px 24px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,7 @@ img { max-width: 100%; display: block; }
 }
 .section-intro-copy {
   max-width: 763px;
-  color: #000;
+  color: #2e2a2a;
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: 32px;
@@ -90,7 +90,7 @@ img { max-width: 100%; display: block; }
 .section-services {
   background: var(--brand-sand);
   scroll-margin-top: 120px;
-  padding: 100px 78px;
+  padding: 40px 78px 100px;
 }
 .services-grid {
   max-width: 1320px;
@@ -110,7 +110,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 16px;
 }
 .service-body {
-  color: #424242;
+  color: #2e2a2a;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -569,7 +569,7 @@ img { max-width: 100%; display: block; }
 }
 .btn-outline:hover {
   background: #fff;
-  color: #000;
+  color: #2e2a2a;
   transform: translateY(-2px);
 }
 
