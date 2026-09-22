@@ -36,7 +36,7 @@ export default function Home() {
           <div className="hero-bar" aria-hidden="true" />
         </section>
 
-        <section className="section-intro">
+        <section id="intro" className="section-intro">
           <p className="section-intro-copy">
             Squad is the hospitality staffing specialist. Helping you
             recruit the best staff, from top first-class managers, to

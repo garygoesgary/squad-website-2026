@@ -46,8 +46,8 @@ export default function SiteHeader() {
           />
         </a>
         <nav className="main-nav">
-          <a href="#">Our Services</a>
-          <a href="#">Get in touch</a>
+          <a href="#intro">Our Services</a>
+          <a href="#contact">Get in touch</a>
         </nav>
         <a className="btn-outline header-cta" href="tel:1300491856">
           Lets Talk: 1300 491 856
