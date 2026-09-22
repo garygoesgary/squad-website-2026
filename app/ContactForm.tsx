@@ -1,7 +1,7 @@
 export default function ContactForm() {
   return (
     <div className="contact-form-grid">
-      <div className="contact-intro">
+      <div className="contact-intro reveal">
         <h2 className="contact-heading">talk to us today.</h2>
         <p className="contact-body">
           We love to talk all things people. Get in touch with the team for

@@ -25,8 +25,11 @@ const services = [
 export default function Services() {
   return (
     <div className="services-grid">
-      {services.map((service) => (
-        <div className="service-column" key={service.heading}>
+      {services.map((service, i) => (
+        <div
+          className={`service-column reveal reveal-delay-${i + 1}`}
+          key={service.heading}
+        >
           <h3 className="service-heading">{service.heading}</h3>
           {service.paragraphs.map((p, i) => (
             <p className="service-body" key={i}>

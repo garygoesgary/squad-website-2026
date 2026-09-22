@@ -87,7 +87,7 @@ export default function ClientsCarousel() {
 
   return (
     <div className="clients-carousel">
-      <p className="clients-carousel-label">Trusted by</p>
+      <p className="clients-carousel-label reveal">Trusted by</p>
       <div className="carousel-track" ref={trackRef}>
         {loopedClients.map((client, i) => (
           <div className="carousel-cell" key={`${client.name}-${i}`}>

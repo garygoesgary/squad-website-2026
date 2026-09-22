@@ -36,13 +36,13 @@ export default function Home() {
         </section>
 
         <section id="intro" className="section-intro">
-          <p className="section-intro-copy">
+          <p className="section-intro-copy reveal">
             Squad is the hospitality staffing specialist. Helping you
             recruit the best staff, from top first-class managers, to
             hard-working kitchen shift workers. Long term, short term and
             everything in between.
           </p>
-          <a href="#" className="section-intro-button">
+          <a href="#" className="section-intro-button reveal reveal-delay-1">
             Helping in these areas
           </a>
         </section>
