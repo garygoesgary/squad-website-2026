@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 
 /* Season Mix — self-hosted web font supplied by the client. Only the
    Regular (400) weight was provided, so any other weight requested
@@ -23,10 +23,11 @@
   --brand-sand: #fdf7f3;
 
   /* Serif for headline/display copy wherever the design calls for it.
-     Season Mix (self-hosted, see @font-face above) is the real brand
-     face; Cormorant Garamond stays in the stack as the fallback while
-     it loads / if it ever fails. Body/UI text stays on Inter. */
-  --font-serif: 'Season Mix', 'Cormorant Garamond', Georgia, serif;
+     Season Mix (self-hosted, see @font-face above) is the definitive
+     brand face — client-supplied, not a Figma-matching stand-in.
+     Georgia/serif are generic system fallbacks only, in case the web
+     font ever fails to load. Body/UI text stays on Inter. */
+  --font-serif: 'Season Mix', Georgia, serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
