@@ -31,10 +31,12 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { max-width: 100vw; overflow-x: hidden; scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
+/* Anchor-link scrolling is handled by SmoothScroll.tsx (a custom
+   rAF-driven animation with a slower duration/easing than the
+   browser's native scroll-behavior:smooth) — not set here, since it
+   would otherwise try to additionally smooth each of that script's
+   own per-frame scrollTo() calls, fighting its easing. */
+html { max-width: 100vw; overflow-x: hidden; }
 body {
   max-width: 100vw;
   overflow-x: hidden;
