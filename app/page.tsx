@@ -3,6 +3,7 @@ import ClientsCarousel from "./ClientsCarousel";
 import HeroAnimation from "./HeroAnimation";
 import ContactForm from "./ContactForm";
 import ImageGallery from "./ImageGallery";
+import Services from "./Services";
 import Footer from "./Footer";
 
 export default function Home() {
@@ -47,11 +48,8 @@ export default function Home() {
           </a>
         </section>
 
-        <section id="next" className="section-dark-ash">
-          <p className="section-dark-ash-copy">
-            Squad recognises talent—helping you recruit the best, from top
-            first-class chefs, to hard-working shift workers.
-          </p>
+        <section id="next" className="section-services">
+          <Services />
         </section>
 
         <section className="section-sand">
