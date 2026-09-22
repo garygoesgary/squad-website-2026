@@ -92,7 +92,7 @@ img { max-width: 100%; display: block; }
 .section-services {
   background: var(--brand-sand);
   scroll-margin-top: 120px;
-  padding: 40px 78px 100px;
+  padding: 40px 78px 50px;
 }
 .services-grid {
   max-width: 1320px;
@@ -131,6 +131,7 @@ img { max-width: 100%; display: block; }
 .section-sand {
   background: var(--brand-sand);
   scroll-margin-top: 120px;
+  padding-bottom: 50px;
 }
 
 /* Billboard mockup (Figma node 25:447) */
