@@ -75,3 +75,13 @@ Hero photo, source `Squad-Chef-Large-RGB.webp` (chef in a dark restaurant kitche
 
 - `agnes.png`, `calile.png`, `evt.png`, `discovery.png`, `crystalbrook.png`, `waymark.png` — raster (transparent background)
 - `star.svg`, `w-hotels.svg`, `dap-and-co.svg` — real vector exports (stripped of the card background/blur baked into Figma's export, so they layer cleanly under the site's own `.carousel-cell` glass-card styling)
+
+# Acknowledgement of Country flags
+
+Footer flag row (above the Acknowledgement of Country text, [Footer.tsx](app/Footer.tsx)) — client-supplied files, not hand-drawn (an earlier hand-built SVG version was replaced 2026-09-25):
+
+- [`public/images/flag-australia.webp`](public/images/flag-australia.webp)
+- [`public/images/flag-aboriginal.webp`](public/images/flag-aboriginal.webp)
+- [`public/images/flag-torres-strait-islander.webp`](public/images/flag-torres-strait-islander.webp)
+
+All three 300×150 (2:1).

@@ -50,22 +50,22 @@ export default function Footer() {
         <div className="footer-acknowledgement-block">
           <div className="footer-flags">
             <img
-              src="/images/flag-australia.svg"
+              src="/images/flag-australia.webp"
               alt="Flag of Australia"
-              width={30}
-              height={20}
+              width={300}
+              height={150}
             />
             <img
-              src="/images/flag-aboriginal.svg"
+              src="/images/flag-aboriginal.webp"
               alt="Australian Aboriginal Flag"
-              width={30}
-              height={20}
+              width={300}
+              height={150}
             />
             <img
-              src="/images/flag-torres-strait-islander.svg"
+              src="/images/flag-torres-strait-islander.webp"
               alt="Torres Strait Islander Flag"
-              width={30}
-              height={20}
+              width={300}
+              height={150}
             />
           </div>
           <p className="footer-acknowledgement">
