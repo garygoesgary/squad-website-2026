@@ -4,7 +4,6 @@ import HeroAnimation from "./HeroAnimation";
 import ContactForm from "./ContactForm";
 import Services from "./Services";
 import Footer from "./Footer";
-import FlowButtonContent from "./FlowButtonContent";
 
 export default function Home() {
   return (
@@ -43,12 +42,6 @@ export default function Home() {
             hard-working kitchen shift workers. Long term, short term and
             everything in between.
           </p>
-          <a
-            href="#next"
-            className="section-intro-button btn-flow reveal reveal-delay-1"
-          >
-            <FlowButtonContent text="Helping in these areas" />
-          </a>
         </section>
 
         <section id="next" className="section-services">

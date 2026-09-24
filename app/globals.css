@@ -154,16 +154,6 @@ img { max-width: 100%; display: block; }
   line-height: 1.275;
   text-align: center;
 }
-.section-intro-button {
-  justify-content: center;
-  height: 52px;
-  padding: 0 32px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  white-space: nowrap;
-}
-
 /* Services section (Figma node 117:1315) */
 .section-services {
   background: var(--brand-sand);
@@ -336,6 +326,11 @@ img { max-width: 100%; display: block; }
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 15px;
+}
+/* Keep the full pill shape on hover instead of .btn-flow's default
+   tighten-to-12px corner morph. */
+.contact-submit.btn-flow:hover {
+  border-radius: 100px;
 }
 @media (max-width: 900px) {
   .contact-form-grid {
@@ -602,12 +597,22 @@ img { max-width: 100%; display: block; }
   color: #cccccc;
 }
 .btn-outline {
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 100px;
   padding: 8px 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.13px;
+  color: #fff;
   white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-outline:hover {
+  background: var(--brand-molten-red);
+  border-color: var(--brand-molten-red);
+  color: #fff;
 }
 
 /* Mobile hamburger menu */

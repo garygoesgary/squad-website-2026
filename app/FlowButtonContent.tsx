@@ -1,9 +1,7 @@
-// Inner markup shared by every ".btn-flow" button (nav CTA, mobile nav
-// CTA, "Helping in these areas", the contact form submit) — two arrow
-// icons that swap sides on hover, the label, and the expanding circle
-// that fills the button. The outer element (an <a> in most places, a
-// <button type="submit"> for the form) stays with each call site since
-// they aren't interchangeable; only this shared inside is reused.
+// Inner markup for a ".btn-flow" button — currently just the contact
+// form's "Submit" (the nav CTAs reverted to a plain .btn-outline).
+// Two arrow icons that swap sides on hover, the label, and the
+// expanding circle that fills the button.
 export default function FlowButtonContent({ text }: { text: string }) {
   return (
     <>
