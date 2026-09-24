@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FlowButtonContent from "./FlowButtonContent";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -40,11 +41,11 @@ export default function MobileNav() {
             Get in touch
           </a>
           <a
-            className="btn-outline"
+            className="btn-outline btn-flow"
             href="tel:1300491856"
             onClick={() => setOpen(false)}
           >
-            Lets Talk: 1300 491 856
+            <FlowButtonContent text="Lets Talk: 1300 491 856" />
           </a>
         </div>
       )}

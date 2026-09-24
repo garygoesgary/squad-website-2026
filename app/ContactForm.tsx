@@ -1,3 +1,5 @@
+import FlowButtonContent from "./FlowButtonContent";
+
 export default function ContactForm() {
   return (
     <div className="contact-form-grid">
@@ -69,16 +71,8 @@ export default function ContactForm() {
           />
         </div>
 
-        <button type="submit" className="contact-submit">
-          Submit
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M5 12h14M13 6l6 6-6 6"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+        <button type="submit" className="contact-submit btn-flow">
+          <FlowButtonContent text="Submit" />
         </button>
       </form>
     </div>

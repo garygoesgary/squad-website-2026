@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import MobileNav from "./MobileNav";
+import FlowButtonContent from "./FlowButtonContent";
 
 export default function SiteHeader() {
   const [pastHero, setPastHero] = useState(false);
@@ -49,8 +50,8 @@ export default function SiteHeader() {
           <a href="#intro">Our Services</a>
           <a href="#contact">Get in touch</a>
         </nav>
-        <a className="btn-outline header-cta" href="tel:1300491856">
-          Lets Talk: 1300 491 856
+        <a className="btn-outline header-cta btn-flow" href="tel:1300491856">
+          <FlowButtonContent text="Lets Talk: 1300 491 856" />
         </a>
         <MobileNav />
       </div>
