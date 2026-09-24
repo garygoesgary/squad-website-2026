@@ -29,44 +29,48 @@ export default function ContactForm() {
             <label htmlFor="lastName">
               Last Name<span aria-hidden="true">*</span>
             </label>
-            <input id="lastName" name="lastName" type="text" required />
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              placeholder="Enter your last name"
+              required
+            />
           </div>
         </div>
 
         <div className="contact-form-row">
           <div className="contact-field">
-            <label htmlFor="email" className="sr-only">
-              Email
+            <label htmlFor="email">
+              Email<span aria-hidden="true">*</span>
             </label>
             <input
               id="email"
               name="email"
               type="email"
-              placeholder="Email*"
+              placeholder="you@email.com"
               required
             />
           </div>
           <div className="contact-field">
-            <label htmlFor="phone" className="sr-only">
-              Phone number
-            </label>
+            <label htmlFor="phone">Phone Number</label>
             <input
               id="phone"
               name="phone"
               type="tel"
-              placeholder="Phone number"
+              placeholder="04XX XXX XXX"
             />
           </div>
         </div>
 
         <div className="contact-field">
-          <label htmlFor="message" className="sr-only">
-            Message
+          <label htmlFor="message">
+            Message<span aria-hidden="true">*</span>
           </label>
           <textarea
             id="message"
             name="message"
-            placeholder="Message*"
+            placeholder="Tell us how we can help..."
             required
           />
         </div>

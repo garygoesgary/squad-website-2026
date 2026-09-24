@@ -74,6 +74,12 @@ export default function ClientsCarousel() {
     track.addEventListener("pointerdown", pause);
     track.addEventListener("pointerup", resume);
     track.addEventListener("pointerleave", resume);
+    // On touch devices, a swipe that the browser hands off to native
+    // scrolling fires "pointercancel" instead of "pointerup" — without
+    // this, one touch on the track (even brushing it while scrolling
+    // the page past this section) permanently pauses the auto-scroll,
+    // since resume() never runs.
+    track.addEventListener("pointercancel", resume);
 
     rafId = requestAnimationFrame(tick);
 
@@ -82,6 +88,7 @@ export default function ClientsCarousel() {
       track.removeEventListener("pointerdown", pause);
       track.removeEventListener("pointerup", resume);
       track.removeEventListener("pointerleave", resume);
+      track.removeEventListener("pointercancel", resume);
     };
   }, []);
 
