@@ -315,6 +315,11 @@ img { max-width: 100%; display: block; }
 .contact-field textarea::placeholder {
   color: #8c8580;
 }
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: 2px solid var(--brand-volcanic-red);
+  outline-offset: 2px;
+}
 .contact-field textarea {
   min-height: 140px;
   resize: vertical;
