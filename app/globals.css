@@ -736,9 +736,21 @@ img { max-width: 100%; display: block; }
   color: var(--brand-white);
   text-decoration: underline;
 }
-.footer-acknowledgement {
+.footer-acknowledgement-block {
   max-width: 1100px;
   margin-top: 64px;
+}
+.footer-flags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.footer-flags img {
+  height: 20px;
+  width: auto;
+  border-radius: 2px;
+}
+.footer-acknowledgement {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 12px;

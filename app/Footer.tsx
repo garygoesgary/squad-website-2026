@@ -47,13 +47,35 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="footer-acknowledgement">
-          Squad Recruitment acknowledges the Traditional Custodians of
-          country throughout Australia and their connections to land, sea
-          and community. We pay our respect to their Elders past and
-          present and extend that respect to all Aboriginal and Torres
-          Strait Islander peoples today.
-        </p>
+        <div className="footer-acknowledgement-block">
+          <div className="footer-flags">
+            <img
+              src="/images/flag-australia.svg"
+              alt="Flag of Australia"
+              width={30}
+              height={20}
+            />
+            <img
+              src="/images/flag-aboriginal.svg"
+              alt="Australian Aboriginal Flag"
+              width={30}
+              height={20}
+            />
+            <img
+              src="/images/flag-torres-strait-islander.svg"
+              alt="Torres Strait Islander Flag"
+              width={30}
+              height={20}
+            />
+          </div>
+          <p className="footer-acknowledgement">
+            Squad Recruitment acknowledges the Traditional Custodians of
+            country throughout Australia and their connections to land, sea
+            and community. We pay our respect to their Elders past and
+            present and extend that respect to all Aboriginal and Torres
+            Strait Islander peoples today.
+          </p>
+        </div>
 
         <p className="footer-copyright">
           Copyright @ 2026{" "}

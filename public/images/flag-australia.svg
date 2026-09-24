@@ -1,0 +1,52 @@
+<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flag of Australia">
+  <defs>
+    <clipPath id="au-outer">
+      <rect x="0" y="0" width="30" height="20" rx="2" ry="2" />
+    </clipPath>
+    <clipPath id="au-canton">
+      <rect x="0" y="0" width="15" height="10" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#au-outer)">
+    <rect width="30" height="20" fill="#00247d" />
+
+    <g clip-path="url(#au-canton)">
+      <line x1="0" y1="0" x2="15" y2="10" stroke="#ffffff" stroke-width="2.6" />
+      <line x1="15" y1="0" x2="0" y2="10" stroke="#ffffff" stroke-width="2.6" />
+      <line x1="0" y1="0" x2="15" y2="10" stroke="#cf142b" stroke-width="1.1" />
+      <line x1="15" y1="0" x2="0" y2="10" stroke="#cf142b" stroke-width="1.1" />
+      <rect x="0" y="3.7" width="15" height="2.6" fill="#ffffff" />
+      <rect x="6" y="0" width="3" height="10" fill="#ffffff" />
+      <rect x="0" y="4.3" width="15" height="1.4" fill="#cf142b" />
+      <rect x="6.75" y="0" width="1.5" height="10" fill="#cf142b" />
+    </g>
+
+    <!-- Commonwealth Star -->
+    <polygon
+      points="7.50,13.60 7.79,14.61 8.75,14.20 8.14,15.05 9.06,15.56 8.02,15.61 8.19,16.64 7.50,15.86 6.81,16.64 6.98,15.61 5.94,15.56 6.86,15.05 6.25,14.20 7.21,14.61"
+      fill="#ffffff"
+    />
+
+    <!-- Southern Cross -->
+    <polygon
+      points="22.50,1.90 22.73,2.71 23.52,2.39 23.03,3.08 23.77,3.49 22.92,3.54 23.06,4.37 22.50,3.74 21.94,4.37 22.08,3.54 21.23,3.49 21.97,3.08 21.48,2.39 22.27,2.71"
+      fill="#ffffff"
+    />
+    <polygon
+      points="26.50,7.35 26.71,8.07 27.40,7.78 26.97,8.39 27.62,8.76 26.88,8.80 27.00,9.54 26.50,8.98 26.00,9.54 26.12,8.80 25.38,8.76 26.03,8.39 25.60,7.78 26.29,8.07"
+      fill="#ffffff"
+    />
+    <polygon
+      points="22.00,14.90 22.29,15.91 23.25,15.50 22.64,16.35 23.56,16.86 22.52,16.91 22.69,17.94 22.00,17.16 21.31,17.94 21.48,16.91 20.44,16.86 21.36,16.35 20.75,15.50 21.71,15.91"
+      fill="#ffffff"
+    />
+    <polygon
+      points="18.00,8.85 18.21,9.57 18.90,9.28 18.47,9.89 19.12,10.26 18.38,10.30 18.50,11.04 18.00,10.48 17.50,11.04 17.62,10.30 16.88,10.26 17.53,9.89 17.10,9.28 17.79,9.57"
+      fill="#ffffff"
+    />
+    <polygon
+      points="20.30,12.30 20.46,12.78 20.97,12.78 20.56,13.08 20.71,13.57 20.30,13.27 19.89,13.57 20.04,13.08 19.63,12.78 20.14,12.78"
+      fill="#ffffff"
+    />
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Torres Strait Islander Flag">
+  <defs>
+    <clipPath id="tsi-outer">
+      <rect x="0" y="0" width="30" height="20" rx="2" ry="2" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#tsi-outer)">
+    <rect width="30" height="20" fill="#0072ce" />
+    <rect width="30" height="4" fill="#00843d" />
+    <rect y="16" width="30" height="4" fill="#00843d" />
+    <rect y="4" width="30" height="0.9" fill="#000000" />
+    <rect y="15.1" width="30" height="0.9" fill="#000000" />
+
+    <!-- dhari (headdress) -->
+    <path
+      d="M9.5 11 C9.5 7 12 4.6 15 4.6 C18 4.6 20.5 7 20.5 11 C18.8 9.3 16.9 8.5 15 8.5 C13.1 8.5 11.2 9.3 9.5 11 Z"
+      fill="#ffffff"
+    />
+
+    <!-- 5-point star -->
+    <polygon
+      points="15.00,7.00 15.68,9.07 17.85,9.07 16.09,10.36 16.76,12.43 15.00,11.15 13.24,12.43 13.91,10.36 12.15,9.07 14.32,9.07"
+      fill="#ffffff"
+    />
+  </g>
+</svg>
