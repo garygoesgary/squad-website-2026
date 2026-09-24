@@ -14,9 +14,21 @@ export default function MobileNav() {
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
-        <span />
-        <span />
-        <span />
+        <svg
+          width={20}
+          height={20}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path className="hamburger-line-top" d="M4 12L20 12" />
+          <path className="hamburger-line-mid" d="M4 12H20" />
+          <path className="hamburger-line-bottom" d="M4 12H20" />
+        </svg>
       </button>
 
       {open && (
