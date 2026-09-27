@@ -65,7 +65,7 @@ Hero photo, source `Squad-Chef-Large-RGB.webp` (chef in a dark restaurant kitche
 
 - [`public/images/squad-image_Chef.webp`](public/images/squad-image_Chef.webp) — desktop, 1920×1080 (16:9)
 - [`public/images/hero-tablet.webp`](public/images/hero-tablet.webp) — tablet, 1200×500 (banner)
-- [`public/images/hero-mobile.webp`](public/images/hero-mobile.webp) — mobile, 900×1600 (portrait, centred on the chef)
+- [`public/images/hero-mobile.webp`](public/images/hero-mobile.webp) — mobile, 1080×1350 (4:5 portrait, client-supplied crop `Squad-Chef-Mobile.webp`, replaced 2026-09-27; desktop/tablet crops unchanged)
 
 [`public/images/billboard-street.webp`](public/images/billboard-street.webp) — "YOUR STORY STARTS HERE" billboard mockup on a brick wall (same street photo location as the earlier "Brisbane we got you" version, replaced 2026-09-22). 2000×1390 source, displayed full-bleed via `background-size: cover` at a 1440:740 aspect ratio, matching the design's frame.
 
