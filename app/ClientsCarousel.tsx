@@ -31,20 +31,19 @@ export default function ClientsCarousel() {
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    const cells = Array.from(
-      track.querySelectorAll<HTMLElement>(".carousel-cell")
-    );
+    const secondSetStart = track.querySelectorAll<HTMLElement>(
+      ".carousel-cell"
+    )[clients.length];
 
-    // Width of one full (non-duplicated) set of cards, measured from the
-    // DOM rather than computed from CSS values — the first cell of the
-    // second copy sits exactly one set-width along the scrollable track.
-    const oneSetWidth = cells[clients.length]?.offsetLeft ?? 0;
+    // Width of one full (non-duplicated) set of cards. Re-read lazily
+    // inside the loop below (until it settles on a real value) rather
+    // than measured once here at mount — a single synchronous read can
+    // race layout on some mobile browsers and land on 0 permanently,
+    // which would silently disable the auto-scroll forever since the
+    // tick below only moves once this is > 0.
+    let oneSetWidth = 0;
 
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    let paused = reduceMotion;
+    let paused = false;
     let lastTime: number | null = null;
     let rafId = 0;
 
@@ -53,6 +52,10 @@ export default function ClientsCarousel() {
       if (lastTime === null) lastTime = time;
       const dt = (time - lastTime) / 1000;
       lastTime = time;
+
+      if (oneSetWidth <= 0) {
+        oneSetWidth = secondSetStart?.offsetLeft ?? 0;
+      }
 
       if (!paused && oneSetWidth > 0) {
         track.scrollLeft += PIXELS_PER_SECOND * dt;
@@ -64,11 +67,15 @@ export default function ClientsCarousel() {
 
     // Only an actual drag pauses the auto-scroll (so it isn't fighting
     // the user's own scrollLeft changes) — hovering never stops it.
+    // This marquee deliberately ignores prefers-reduced-motion: it's a
+    // slow, ambient logo strip rather than a disorienting effect, so it
+    // keeps scrolling even with that OS setting on; only a real touch
+    // pauses it.
     const pause = () => {
       paused = true;
     };
     const resume = () => {
-      if (!reduceMotion) paused = false;
+      paused = false;
     };
 
     track.addEventListener("pointerdown", pause);
