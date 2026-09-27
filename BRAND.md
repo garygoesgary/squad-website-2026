@@ -63,7 +63,7 @@ Nine icons representing Squad's offerings, saved as-is from the desktop into [`p
 
 Hero photo, source `Squad-Chef-Large-RGB.webp` (chef in a dark restaurant kitchen, lifting a lid off a steaming pot beside an open flame, replaced 2026-09-22) — cropped per breakpoint from the same source image so the same photo is consistent across all three:
 
-- [`public/images/squad-image_Chef.webp`](public/images/squad-image_Chef.webp) — desktop, client-supplied crop `Squad-Chef-Desktop.webp`, 2434×1654, replaced 2026-09-27
+- [`public/images/squad-image_Chef.webp`](public/images/squad-image_Chef.webp) — desktop, client-supplied crop `Squad-Chef-Desktop.webp`, 2434×1654, replaced 2026-09-27 (second replacement same day — refined grade/lighting, supersedes the earlier version from that day)
 - [`public/images/hero-tablet.webp`](public/images/hero-tablet.webp) — tablet, 1200×500 (banner) — unchanged
 - [`public/images/hero-mobile.webp`](public/images/hero-mobile.webp) — mobile, client-supplied crop `Squad-Chef-Mobile.webp`, 1080×1350 (4:5 portrait), replaced 2026-09-27 (second replacement same day — supersedes the version from earlier that day)
 

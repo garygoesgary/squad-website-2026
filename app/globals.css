@@ -154,6 +154,12 @@ img { max-width: 100%; display: block; }
   line-height: 1.275;
   text-align: center;
 }
+@media (max-width: 767px) {
+  .section-intro-copy {
+    /* 20% smaller on mobile: 32px * 0.8 */
+    font-size: 25.6px;
+  }
+}
 /* Services section (Figma node 117:1315) */
 .section-services {
   background: var(--brand-sand);
@@ -191,6 +197,14 @@ img { max-width: 100%; display: block; }
   .services-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  /* Match .section-intro-copy's left/right margin (24px) above it —
+     was 78px, noticeably narrower than the intro paragraph. */
+  .section-services {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
