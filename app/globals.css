@@ -373,6 +373,10 @@ img { max-width: 100%; display: block; }
   /* Auto-scroll drives scrollLeft directly every frame — smooth
      scroll-behavior would fight/lag those per-frame updates. */
   scroll-behavior: auto;
+  /* Tell the browser only horizontal panning is native here, so a
+     touch that turns out to be a vertical page-scroll hands off to
+     the page immediately rather than the gesture staying ambiguous. */
+  touch-action: pan-x;
   cursor: grab;
   /* Starts flush left — the first card sits at the track's own left
      edge at rest (scrollLeft 0), not centred. 78px matches the site's
@@ -396,9 +400,14 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   padding: 34px 26px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  /* No backdrop-filter: this sits over .section-sand's flat, uniform
+     colour, so blurring it changes nothing visually (blur of a solid
+     colour is that same colour) — it was pure GPU cost for zero
+     benefit. With 18 of these (looped set) continuously repositioning
+     every frame for the auto-scroll, that blur recomputing on every
+     paint is a known mobile Safari/Chrome performance killer and can
+     make the scroll appear to freeze. Plain translucent white instead. */
+  background: rgba(255, 255, 255, 0.72);
   /* Flat opacity, no fade in/out — every card sits at the same weight. */
   opacity: 0.8;
 }
