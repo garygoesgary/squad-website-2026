@@ -482,7 +482,7 @@ img { max-width: 100%; display: block; }
 .hero-animation {
   /* 70% bigger than the original min(500px, 60%) */
   width: 100%;
-  aspect-ratio: 870 / 312;
+  aspect-ratio: 1719 / 179;
 }
 .hero-description {
   max-width: 528px;
