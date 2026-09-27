@@ -473,26 +473,57 @@ img { max-width: 100%; display: block; }
 @media (min-width: 768px) and (max-width: 1023px) {
   /* The tablet hero is a short banner (clamp(320px, 42vw, 460px) —
      see .hero above), not the tall desktop/mobile box. An 850px-wide
-     animation + description no longer fits that height without
-     colliding with the fixed nav above and the scroll arrow below —
-     shrink the whole content block down to match. */
+     animation + tagline no longer fits that height without colliding
+     with the fixed nav above and the scroll arrow below — shrink the
+     content block down to match. .hero-description is positioned
+     independently (see below), so it isn't affected by this. */
   .hero-content { width: min(420px, 70%); gap: 12px; }
-  .hero-description { font-size: 14px; }
 }
 .hero-animation {
   /* 70% bigger than the original min(500px, 60%) */
   width: 100%;
   aspect-ratio: 1719 / 179;
 }
+.hero-tagline {
+  height: 28px;
+  width: auto;
+  display: block;
+}
 .hero-description {
-  max-width: 528px;
+  /* Detached from the centred .hero-content column and pinned near the
+     hero's own bottom edge instead — just above .scroll-arrow (which
+     sits at bottom:28px, 38px tall, so its top edge is 66px up). */
+  position: absolute;
+  left: 50%;
+  bottom: 82px;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  /* width:auto here would shrink-to-fit against only the space to the
+     *right* of left:50% (since the transform that re-centres it isn't
+     factored into that calculation) — capping the box at half the
+     container's width well before max-width ever kicks in. Explicit
+     max-content sizes it to its actual content instead. */
+  width: max-content;
+  max-width: 90%;
   color: #e5e5e5;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.3;
   letter-spacing: -0.17px;
   text-align: center;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  /* The full sentence at 14px doesn't fit on one line at mobile
+     widths — nowrap would run it off the edge and clip it. Wrap it
+     back to (roughly) two lines here instead; tablet/desktop keep the
+     single line. */
+  .hero-description {
+    white-space: normal;
+    max-width: 340px;
+  }
 }
 .hero-bar {
   position: absolute;

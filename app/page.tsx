@@ -13,14 +13,19 @@ export default function Home() {
           <div className="hero-media" aria-hidden="true" />
           <div className="hero-content">
             <HeroAnimation />
-            <p className="hero-description">
-              Squad Hospitality is here to help you with your
-              <br />
-              Permanent, Temporary or Contract staffing needs.
-            </p>
+            <img
+              className="hero-tagline"
+              src="/images/hero-tagline.svg"
+              alt="hospitality talent scouts"
+            />
           </div>
 
           <SiteHeader />
+
+          <p className="hero-description">
+            Squad Hospitality is here to help you with your Permanent,
+            Temporary or Contract staffing needs.
+          </p>
 
           <a className="scroll-arrow" href="#next" aria-label="Scroll down">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
