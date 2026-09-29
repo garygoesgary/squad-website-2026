@@ -438,7 +438,7 @@ img { max-width: 100%; display: block; }
 .contact-heading {
   font-family: var(--font-serif);
   font-weight: 300;
-  font-size: 40px;
+  font-size: 32px;
   color: var(--brand-volcanic-red);
   margin-bottom: 20px;
 }
