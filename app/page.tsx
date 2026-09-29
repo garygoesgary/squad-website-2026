@@ -1,7 +1,6 @@
 import SiteHeader from "./SiteHeader";
 import ClientsCarousel from "./ClientsCarousel";
 import HeroAnimation from "./HeroAnimation";
-import HeroMedia from "./HeroMedia";
 import ContactForm from "./ContactForm";
 import Services from "./Services";
 import Gallery from "./Gallery";
@@ -14,7 +13,7 @@ export default function Home() {
     <>
       <main>
         <section className="hero">
-          <HeroMedia />
+          <div className="hero-media" aria-hidden="true" />
           <div className="hero-content">
             <HeroAnimation />
             <img

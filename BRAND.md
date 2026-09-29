@@ -67,8 +67,6 @@ Hero photo, source `Squad-Chef-Large-RGB.webp` (chef in a dark restaurant kitche
 - [`public/images/hero-tablet.webp`](public/images/hero-tablet.webp) — tablet, 1200×500 (banner) — unchanged
 - [`public/images/hero-mobile.webp`](public/images/hero-mobile.webp) — mobile, client-supplied crop `Squad-Chef-Mobile.webp`, 1080×1350 (4:5 portrait), replaced 2026-09-30 (latest of several replacements)
 
-Desktop hero image parallaxes on scroll ([HeroMedia.tsx](app/HeroMedia.tsx), 2026-09-30) — same technique as the billboard (oversized image, scroll-driven `transform`), but gated to `window.innerWidth >= 1024` only; mobile and tablet stay exactly as before, no transform ever applied there.
-
 [`public/images/billboard-street.webp`](public/images/billboard-street.webp) — "YOUR STORY STARTS HERE" billboard mockup on a brick wall (same street photo location as the earlier "Brisbane we got you" version, replaced 2026-09-22). 2000×1390 source, displayed full-bleed via `background-size: cover` at a 1440:740 aspect ratio, matching the design's frame.
 
 # Client logos
