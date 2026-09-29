@@ -638,7 +638,15 @@ img { max-width: 100%; display: block; }
   .hero-media { background-image: url('/images/hero-tablet.webp'); }
 }
 @media (min-width: 1024px) {
-  .hero-media { background-image: url('/images/squad-image_Chef.webp'); }
+  .hero-media {
+    background-image: url('/images/squad-image_Chef.webp');
+    /* Parallax reserve (HeroMedia.tsx) — desktop only. Oversized so
+       the scroll-driven transform never reveals an edge; mobile and
+       tablet stay exactly inset:0, no transform ever applied there. */
+    top: -15%;
+    height: 130%;
+    will-change: transform;
+  }
 }
 .hero-content {
   position: absolute;
