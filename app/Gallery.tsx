@@ -16,11 +16,15 @@ const placeholders = Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => i + 1);
 // identical start of the second, then silently wraps back.
 const loopedPlaceholders = [...placeholders, ...placeholders];
 
-const CELL_WIDTH = 515;
 const PIXELS_PER_SECOND = 60;
+const BOOST_MULTIPLIER = 4;
 
 export default function Gallery() {
   const trackRef = useRef<HTMLDivElement>(null);
+  // -1/0/1: which arrow (if any) is currently held down, read by the
+  // rAF loop every frame. A ref (not state) since it only needs to be
+  // read inside the loop, never trigger a re-render.
+  const boostRef = useRef<0 | 1 | -1>(0);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -47,49 +51,95 @@ export default function Gallery() {
 
       if (oneSetWidth <= 0) {
         oneSetWidth = secondSetStart?.offsetLeft ?? 0;
+        if (oneSetWidth > 0) {
+          // Start mid-loop (the two sets are identical, so this looks
+          // the same as scrollLeft 0) so the reverse auto-scroll below
+          // has room to count down before it ever needs to wrap.
+          track.scrollLeft = oneSetWidth;
+        }
       }
 
       if (!paused && oneSetWidth > 0) {
-        track.scrollLeft += PIXELS_PER_SECOND * dt;
-        if (track.scrollLeft >= oneSetWidth) {
+        // Base direction is reversed from before (right-to-left
+        // content motion instead of left-to-right); holding an arrow
+        // boosts speed, left arrow additionally flips direction back
+        // the other way.
+        const boost = boostRef.current;
+        const delta =
+          boost === 1
+            ? -PIXELS_PER_SECOND * BOOST_MULTIPLIER * dt
+            : boost === -1
+              ? PIXELS_PER_SECOND * BOOST_MULTIPLIER * dt
+              : -PIXELS_PER_SECOND * dt;
+
+        track.scrollLeft += delta;
+        if (track.scrollLeft <= 0) {
+          track.scrollLeft += oneSetWidth;
+        } else if (track.scrollLeft >= oneSetWidth) {
           track.scrollLeft -= oneSetWidth;
         }
       }
     };
 
-    // Only a real drag/click pauses the auto-scroll — deliberately
-    // ignores prefers-reduced-motion (a slow ambient strip, not a
-    // disorienting effect), matching ClientsCarousel.
-    const pause = () => {
+    // Real click-and-drag with the mouse (native overflow-x:auto only
+    // supports touch/trackpad/scrollbar dragging, not a mouse drag) —
+    // pointer capture keeps the drag going even if the cursor leaves
+    // the track mid-drag. Touch still falls through to the browser's
+    // own touch-scroll as before (pointercancel fires once it takes
+    // over, which still lands on endDrag/resume below).
+    let dragging = false;
+    let dragStartX = 0;
+    let dragStartScrollLeft = 0;
+
+    const startDrag = (e: PointerEvent) => {
       paused = true;
+      dragging = true;
+      dragStartX = e.clientX;
+      dragStartScrollLeft = track.scrollLeft;
+      track.setPointerCapture(e.pointerId);
     };
-    const resume = () => {
+    const onDrag = (e: PointerEvent) => {
+      if (!dragging) return;
+      track.scrollLeft = dragStartScrollLeft - (e.clientX - dragStartX);
+    };
+    const endDrag = (e: PointerEvent) => {
+      dragging = false;
       paused = false;
+      if (oneSetWidth > 0) {
+        // Dragging can push scrollLeft into the second (duplicate) set
+        // or briefly negative — normalise back into [0, oneSetWidth)
+        // so the tick loop's simple wrap check keeps working.
+        track.scrollLeft =
+          ((track.scrollLeft % oneSetWidth) + oneSetWidth) % oneSetWidth;
+      }
+      try {
+        track.releasePointerCapture(e.pointerId);
+      } catch {
+        // Pointer capture may already be gone (e.g. after pointercancel).
+      }
     };
 
-    track.addEventListener("pointerdown", pause);
-    track.addEventListener("pointerup", resume);
-    track.addEventListener("pointerleave", resume);
-    track.addEventListener("pointercancel", resume);
+    track.addEventListener("pointerdown", startDrag);
+    track.addEventListener("pointermove", onDrag);
+    track.addEventListener("pointerup", endDrag);
+    track.addEventListener("pointerleave", endDrag);
+    track.addEventListener("pointercancel", endDrag);
 
     rafId = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(rafId);
-      track.removeEventListener("pointerdown", pause);
-      track.removeEventListener("pointerup", resume);
-      track.removeEventListener("pointerleave", resume);
-      track.removeEventListener("pointercancel", resume);
+      track.removeEventListener("pointerdown", startDrag);
+      track.removeEventListener("pointermove", onDrag);
+      track.removeEventListener("pointerup", endDrag);
+      track.removeEventListener("pointerleave", endDrag);
+      track.removeEventListener("pointercancel", endDrag);
     };
   }, []);
 
-  const scrollByCell = (direction: 1 | -1) => {
-    trackRef.current?.scrollBy({
-      left: CELL_WIDTH * direction,
-      behavior: "smooth",
-    });
-  };
-
+  // Hold to speed up (in that arrow's direction); release to return
+  // to the normal auto-scroll speed. Keyboard-activatable too (Enter
+  // held down repeats keydown, which is fine — boostRef just stays 1).
   return (
     <div className="gallery">
       <div className="gallery-track" ref={trackRef}>
@@ -102,8 +152,22 @@ export default function Gallery() {
       <button
         type="button"
         className="gallery-arrow gallery-arrow-left"
-        aria-label="Previous image"
-        onClick={() => scrollByCell(-1)}
+        aria-label="Speed up (reverse)"
+        onPointerDown={() => {
+          boostRef.current = -1;
+        }}
+        onPointerUp={() => {
+          boostRef.current = 0;
+        }}
+        onPointerLeave={() => {
+          boostRef.current = 0;
+        }}
+        onKeyDown={() => {
+          boostRef.current = -1;
+        }}
+        onKeyUp={() => {
+          boostRef.current = 0;
+        }}
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
@@ -117,8 +181,22 @@ export default function Gallery() {
       <button
         type="button"
         className="gallery-arrow gallery-arrow-right"
-        aria-label="Next image"
-        onClick={() => scrollByCell(1)}
+        aria-label="Speed up (forward)"
+        onPointerDown={() => {
+          boostRef.current = 1;
+        }}
+        onPointerUp={() => {
+          boostRef.current = 0;
+        }}
+        onPointerLeave={() => {
+          boostRef.current = 0;
+        }}
+        onKeyDown={() => {
+          boostRef.current = 1;
+        }}
+        onKeyUp={() => {
+          boostRef.current = 0;
+        }}
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
