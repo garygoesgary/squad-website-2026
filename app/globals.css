@@ -215,6 +215,72 @@ img { max-width: 100%; display: block; }
   }
 }
 
+/* "Download the NEW Squad app" (Figma node 132:280) — sits directly
+   above the clients carousel, reusing Services' 3-column grid; column
+   1 is the heading, column 2 the details/badges, column 3 empty. */
+.section-app {
+  background: var(--brand-sand);
+  padding: 80px 78px;
+}
+.app-grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px;
+}
+.app-heading {
+  color: #d71d23;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.275;
+}
+.app-details-label {
+  color: #2a2a2a;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.app-details-body {
+  color: #2a2a2a;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.app-details-body + .app-details-body {
+  margin-top: 16px;
+}
+.app-badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.app-badges img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+.app-badges img.google-play-badge {
+  /* Corrects the source SVG, which Figma stores pre-flipped (its own
+     generated code applies this same rotate+scaleX pair). */
+  transform: rotate(180deg) scaleX(-1);
+}
+@media (max-width: 900px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .section-app {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 .section-sand {
   background: var(--brand-sand);
   scroll-margin-top: 120px;

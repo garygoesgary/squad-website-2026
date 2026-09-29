@@ -3,6 +3,7 @@ import ClientsCarousel from "./ClientsCarousel";
 import HeroAnimation from "./HeroAnimation";
 import ContactForm from "./ContactForm";
 import Services from "./Services";
+import SquadApp from "./SquadApp";
 import Footer from "./Footer";
 
 export default function Home() {
@@ -51,6 +52,10 @@ export default function Home() {
 
         <section id="next" className="section-services">
           <Services />
+        </section>
+
+        <section className="section-app">
+          <SquadApp />
         </section>
 
         <section className="section-sand">

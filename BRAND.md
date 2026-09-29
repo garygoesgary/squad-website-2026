@@ -76,6 +76,15 @@ Hero photo, source `Squad-Chef-Large-RGB.webp` (chef in a dark restaurant kitche
 - `agnes.png`, `calile.png`, `evt.png`, `discovery.png`, `crystalbrook.png`, `waymark.png` — raster (transparent background)
 - `star.svg`, `w-hotels.svg`, `dap-and-co.svg` — real vector exports (stripped of the card background/blur baked into Figma's export, so they layer cleanly under the site's own `.carousel-cell` glass-card styling)
 
+# Squad app section
+
+"Download the NEW Squad app" ([SquadApp.tsx](app/SquadApp.tsx), Figma node 132:280), sits directly above the clients carousel, reusing Services' 3-column grid (heading / details+badges / empty). Badge assets pulled from that Figma node, not re-sourced from Apple/Google directly:
+
+- [`public/images/app-store-badge.png`](public/images/app-store-badge.png) — flattened PNG (119×35). The badge is composed of 5 separately-transformed vector layers in Figma with no single clean SVG export available, so this is Figma's own flattened render of that exact node rather than a hand-reassembled approximation.
+- [`public/images/google-play-badge.svg`](public/images/google-play-badge.svg) — real vector export. **Note:** the source SVG is stored pre-flipped by Figma (its own generated code wraps it in a `rotate(180deg) scaleX(-1)` correction) — that same corrective transform is applied via `.app-badges img.google-play-badge` in globals.css. Don't remove it without checking the badge still reads right-side up.
+
+The body copy under "Quick online booking for jobs" is word-for-word identical to the "Long-term temporary personnel" service item's paragraphs — this reads as leftover/duplicated placeholder text in the Figma file (mismatched to an app-booking heading), not real app copy. Flagged to the client; swap in real copy when supplied.
+
 # Acknowledgement of Country flags
 
 Footer flag row (above the Acknowledgement of Country text, [Footer.tsx](app/Footer.tsx)) — client-supplied files, not hand-drawn (an earlier hand-built SVG version was replaced 2026-09-25):
