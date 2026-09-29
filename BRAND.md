@@ -76,6 +76,10 @@ Hero photo, source `Squad-Chef-Large-RGB.webp` (chef in a dark restaurant kitche
 - `agnes.png`, `calile.png`, `evt.png`, `discovery.png`, `crystalbrook.png`, `waymark.png` — raster (transparent background)
 - `star.svg`, `w-hotels.svg`, `dap-and-co.svg` — real vector exports (stripped of the card background/blur baked into Figma's export, so they layer cleanly under the site's own `.carousel-cell` glass-card styling)
 
+# Image gallery (placeholder)
+
+Auto-scrolling gallery ([Gallery.tsx](app/Gallery.tsx), Figma node 132:346), sits between Services and the "Download the app" section. **No real photography has been supplied for this yet** — Figma itself only shows plain grey (`#d9d9d9`) placeholder rectangles, so the six cells here are numbered placeholder `<div>`s, not `<img>` tags. Full-bleed, 515×335 cells with zero gap, matching the design. Swap each placeholder for `<img src="...">` when real photos are supplied — the sizing/no-gap CSS on `.gallery-cell` won't need to change. Same auto-scroll + touch-pause mechanics as ClientsCarousel, plus red circular prev/next arrows (styled like the hero's `.scroll-arrow`) that smooth-scroll by one cell width.
+
 # Squad app section
 
 "Download the NEW Squad app" ([SquadApp.tsx](app/SquadApp.tsx), Figma node 132:280), sits directly above the clients carousel, reusing Services' 3-column grid (heading / details+badges / empty). Badge assets pulled from that Figma node, not re-sourced from Apple/Google directly:
