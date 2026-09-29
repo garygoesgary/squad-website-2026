@@ -17,14 +17,23 @@ const placeholders = Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => i + 1);
 const loopedPlaceholders = [...placeholders, ...placeholders];
 
 const PIXELS_PER_SECOND = 60;
-const BOOST_MULTIPLIER = 4;
+const BOOST_MULTIPLIER = 10;
+// A plain click is a near-instant down+up — without a floor, the
+// boost would barely register. Holding past this floor still works
+// exactly as before (extends for as long as it's held, stops the
+// instant it's released).
+const MIN_BOOST_MS = 1000;
 
 export default function Gallery() {
   const trackRef = useRef<HTMLDivElement>(null);
-  // -1/0/1: which arrow (if any) is currently held down, read by the
+  // -1/0/1: which arrow (if any) is currently boosting, read by the
   // rAF loop every frame. A ref (not state) since it only needs to be
   // read inside the loop, never trigger a re-render.
   const boostRef = useRef<0 | 1 | -1>(0);
+  const boostStartRef = useRef(0);
+  const boostClearTimerRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
 
   useEffect(() => {
     const track = trackRef.current;
@@ -134,12 +143,35 @@ export default function Gallery() {
       track.removeEventListener("pointerup", endDrag);
       track.removeEventListener("pointerleave", endDrag);
       track.removeEventListener("pointercancel", endDrag);
+      if (boostClearTimerRef.current) clearTimeout(boostClearTimerRef.current);
     };
   }, []);
 
   // Hold to speed up (in that arrow's direction); release to return
-  // to the normal auto-scroll speed. Keyboard-activatable too (Enter
-  // held down repeats keydown, which is fine — boostRef just stays 1).
+  // to the normal auto-scroll speed, but never sooner than
+  // MIN_BOOST_MS after it started, so a quick click still gives a
+  // clearly visible burst rather than an imperceptible blip.
+  const startBoost = (direction: 1 | -1) => {
+    if (boostClearTimerRef.current) {
+      clearTimeout(boostClearTimerRef.current);
+      boostClearTimerRef.current = null;
+    }
+    boostStartRef.current = performance.now();
+    boostRef.current = direction;
+  };
+  const endBoost = () => {
+    const elapsed = performance.now() - boostStartRef.current;
+    const remaining = MIN_BOOST_MS - elapsed;
+    if (remaining > 0) {
+      boostClearTimerRef.current = setTimeout(() => {
+        boostRef.current = 0;
+        boostClearTimerRef.current = null;
+      }, remaining);
+    } else {
+      boostRef.current = 0;
+    }
+  };
+
   return (
     <div className="gallery">
       <div className="gallery-track" ref={trackRef}>
@@ -153,21 +185,11 @@ export default function Gallery() {
         type="button"
         className="gallery-arrow gallery-arrow-left"
         aria-label="Speed up (reverse)"
-        onPointerDown={() => {
-          boostRef.current = -1;
-        }}
-        onPointerUp={() => {
-          boostRef.current = 0;
-        }}
-        onPointerLeave={() => {
-          boostRef.current = 0;
-        }}
-        onKeyDown={() => {
-          boostRef.current = -1;
-        }}
-        onKeyUp={() => {
-          boostRef.current = 0;
-        }}
+        onPointerDown={() => startBoost(-1)}
+        onPointerUp={endBoost}
+        onPointerLeave={endBoost}
+        onKeyDown={() => startBoost(-1)}
+        onKeyUp={endBoost}
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
@@ -182,21 +204,11 @@ export default function Gallery() {
         type="button"
         className="gallery-arrow gallery-arrow-right"
         aria-label="Speed up (forward)"
-        onPointerDown={() => {
-          boostRef.current = 1;
-        }}
-        onPointerUp={() => {
-          boostRef.current = 0;
-        }}
-        onPointerLeave={() => {
-          boostRef.current = 0;
-        }}
-        onKeyDown={() => {
-          boostRef.current = 1;
-        }}
-        onKeyUp={() => {
-          boostRef.current = 0;
-        }}
+        onPointerDown={() => startBoost(1)}
+        onPointerUp={endBoost}
+        onPointerLeave={endBoost}
+        onKeyDown={() => startBoost(1)}
+        onKeyUp={endBoost}
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
