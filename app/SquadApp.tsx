@@ -24,7 +24,7 @@ export default function SquadApp() {
         </p>
         <div className="app-badges">
           <a href="#" aria-label="Download on the App Store">
-            <img src="/images/app-store-badge.png" alt="Download on the App Store" />
+            <img src="/images/app-store-badge.svg" alt="Download on the App Store" />
           </a>
           <a href="#" aria-label="Get it on Google Play">
             {/* The source SVG Figma exported is stored pre-flipped —

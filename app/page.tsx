@@ -5,6 +5,7 @@ import ContactForm from "./ContactForm";
 import Services from "./Services";
 import Gallery from "./Gallery";
 import SquadApp from "./SquadApp";
+import Billboard from "./Billboard";
 import Footer from "./Footer";
 
 export default function Home() {
@@ -67,11 +68,7 @@ export default function Home() {
           <ClientsCarousel />
         </section>
 
-        <section
-          className="section-billboard"
-          role="img"
-          aria-label="Billboard reading 'Your story starts here' — Squad, hospitality talent scouts"
-        />
+        <Billboard />
 
         <section id="contact" className="section-contact">
           <ContactForm />

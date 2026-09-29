@@ -179,8 +179,6 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 56px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 .service-heading {
   color: #d71d23;
@@ -246,6 +244,11 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   background: #d9d9d9;
 }
+.gallery-cell:nth-child(even) {
+  /* Alternating shade so adjacent no-gap placeholder cells read as
+     separate boxes rather than one continuous grey strip. */
+  background: #c2c2c2;
+}
 .gallery-cell span {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
@@ -297,6 +300,10 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 56px;
+  /* Divider moved here from .services-grid — now sits after the Squad
+     app container instead of after Services. */
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 .app-heading {
   color: #d71d23;
@@ -356,13 +363,24 @@ img { max-width: 100%; display: block; }
   padding-bottom: 50px;
 }
 
-/* Billboard mockup (Figma node 25:447) */
+/* Billboard mockup (Figma node 25:447) — parallax via Billboard.tsx */
 .section-billboard {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 1440 / 740;
+}
+.billboard-image {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  width: 100%;
+  height: 130%;
+  transform: translateX(-50%);
   background-image: url('/images/billboard-street.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  will-change: transform;
 }
 
 /* Scroll-reveal (see ScrollReveal.tsx) — fades + lifts text sections
