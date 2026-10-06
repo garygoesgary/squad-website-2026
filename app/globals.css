@@ -648,7 +648,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   width: min(850px, 100%);
   z-index: 5;
   pointer-events: none;
@@ -660,7 +660,7 @@ img { max-width: 100%; display: block; }
      with the fixed nav above and the scroll arrow below — shrink the
      content block down to match. .hero-description is positioned
      independently (see below), so it isn't affected by this. */
-  .hero-content { width: min(420px, 70%); gap: 12px; }
+  .hero-content { width: min(420px, 70%); gap: 6px; }
 }
 .hero-animation {
   /* 70% bigger than the original min(500px, 60%) */
@@ -668,7 +668,8 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 1719 / 179;
 }
 .hero-tagline {
-  height: 28px;
+  /* 50% bigger than the original 28px */
+  height: 42px;
   width: auto;
   display: block;
 }
