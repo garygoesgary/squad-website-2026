@@ -239,20 +239,13 @@ img { max-width: 100%; display: block; }
 .gallery-cell {
   flex: 0 0 515px;
   height: 335px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #d9d9d9;
 }
-.gallery-cell:nth-child(even) {
-  /* Alternating shade so adjacent no-gap placeholder cells read as
-     separate boxes rather than one continuous grey strip. */
-  background: #c2c2c2;
-}
-.gallery-cell span {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  color: #8c8580;
+.gallery-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .gallery-arrow {
   position: absolute;

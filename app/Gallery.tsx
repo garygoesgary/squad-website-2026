@@ -2,19 +2,29 @@
 
 import { useEffect, useRef } from "react";
 
-// No real photography supplied yet for this section (Figma node
-// 132:346 shows plain grey placeholder rectangles) — six placeholder
-// cells, numbered so it's obvious where each future image slots in.
-// Swap each placeholder div for a real <img src="..."> when photos
-// are supplied; the 515x335, no-gap sizing is already set on
-// .gallery-cell so nothing else needs to change.
-const PLACEHOLDER_COUNT = 6;
-const placeholders = Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => i + 1);
+// Real photography from the client's "Web Images" folder, cropped to
+// the gallery's 515x335 (1030x670 @2x) aspect ratio. Figma node
+// 132:346 originally showed plain grey placeholders — these replace
+// that six-cell placeholder set entirely.
+const images = [
+  { src: "/images/gallery/gallery-1.webp", alt: "Hotel manager smiling in a dining area" },
+  { src: "/images/gallery/gallery-2.webp", alt: "Housekeeping staff member preparing a guest bathroom" },
+  { src: "/images/gallery/gallery-3.webp", alt: "Hotel receptionist checking in a guest at the front desk" },
+  { src: "/images/gallery/gallery-4.webp", alt: "Chef relaxing between services" },
+  { src: "/images/gallery/gallery-5.webp", alt: "Hospitality staff member in a hotel lounge" },
+  { src: "/images/gallery/gallery-6.webp", alt: "Waiter setting a restaurant table" },
+  { src: "/images/gallery/gallery-7.webp", alt: "Staff member carrying drinks poolside" },
+  { src: "/images/gallery/gallery-8.webp", alt: "Waiter smiling at a restaurant bar" },
+  { src: "/images/gallery/gallery-9.webp", alt: "Hotel staff member folding towels poolside" },
+  { src: "/images/gallery/gallery-10.webp", alt: "Waiter carrying plates of food" },
+  { src: "/images/gallery/gallery-11.webp", alt: "Hotel receptionist answering the phone" },
+  { src: "/images/gallery/gallery-12.webp", alt: "Barista preparing coffee" },
+];
 
 // Rendered twice back-to-back for the same seamless-loop technique as
 // ClientsCarousel — scrolls from the end of the first set into the
 // identical start of the second, then silently wraps back.
-const loopedPlaceholders = [...placeholders, ...placeholders];
+const loopedImages = [...images, ...images];
 
 const PIXELS_PER_SECOND = 60;
 const BOOST_MULTIPLIER = 10;
@@ -40,7 +50,7 @@ export default function Gallery() {
     if (!track) return;
     const secondSetStart = track.querySelectorAll<HTMLElement>(
       ".gallery-cell"
-    )[placeholders.length];
+    )[images.length];
 
     // Re-read lazily inside the loop (rather than once at mount) so a
     // layout-timing race on some mobile browsers can't leave this
@@ -175,9 +185,9 @@ export default function Gallery() {
   return (
     <div className="gallery">
       <div className="gallery-track" ref={trackRef}>
-        {loopedPlaceholders.map((n, i) => (
-          <div className="gallery-cell" key={`${n}-${i}`}>
-            <span>{n}</span>
+        {loopedImages.map((image, i) => (
+          <div className="gallery-cell" key={`${image.src}-${i}`}>
+            <img src={image.src} alt={image.alt} />
           </div>
         ))}
       </div>

@@ -76,11 +76,13 @@ Hero photo, source `Squad-Chef-Large-RGB.webp` (chef in a dark restaurant kitche
 - `agnes.png`, `calile.png`, `evt.png`, `discovery.png`, `crystalbrook.png`, `waymark.png` — raster (transparent background)
 - `star.svg`, `w-hotels.svg`, `dap-and-co.svg` — real vector exports (stripped of the card background/blur baked into Figma's export, so they layer cleanly under the site's own `.carousel-cell` glass-card styling)
 
-# Image gallery (placeholder)
+# Image gallery
 
-Auto-scrolling gallery ([Gallery.tsx](app/Gallery.tsx), Figma node 132:346), sits between Services and the "Download the app" section. **No real photography has been supplied for this yet** — Figma itself only shows plain grey (`#d9d9d9`) placeholder rectangles, so the six cells here are numbered placeholder `<div>`s, not `<img>` tags. Full-bleed, 515×335 cells with zero gap, matching the design — alternating cells (`nth-child(even)`) are shaded slightly darker (`#c2c2c2` vs `#d9d9d9`) so adjacent no-gap boxes read as separate images rather than one grey strip. Swap each placeholder for `<img src="...">` when real photos are supplied — the sizing/no-gap CSS on `.gallery-cell` won't need to change (drop the alternating-shade rule then too, it's placeholder-only).
+Auto-scrolling gallery ([Gallery.tsx](app/Gallery.tsx), Figma node 132:346), sits between Services and the "Download the app" section. Full-bleed, 515×335 cells with zero gap, matching the design.
 
-Auto-scrolls right-to-left (opposite of ClientsCarousel, deliberately — 2026-09-30), draggable with the mouse (native `overflow-x:auto` only supports touch/trackpad/scrollbar dragging, not a mouse click-drag, so `Gallery.tsx` implements it directly via pointer capture), and the red circular arrows (styled like the hero's `.scroll-arrow`) speed the auto-scroll up ~4x while held rather than jumping one image — right arrow boosts forward, left arrow boosts in reverse. Touch-pause mechanics otherwise match ClientsCarousel.
+Real photography (replaced the placeholder rectangles 2026-10-07) — 12 images from the client's "Web Images" folder, saved to [`public/images/gallery/`](public/images/gallery/) as `gallery-1.webp` … `gallery-12.webp`. Source files were already ~1.537:1 (matching the cell's 515:335 ratio almost exactly), center-cropped to that ratio precisely and resized to 1030×670 (2x, for retina) via Pillow, since macOS `sips` can't write webp. Each has descriptive alt text (hotel staff/service photography) rather than a shared generic string.
+
+Auto-scrolls right-to-left (opposite of ClientsCarousel, deliberately — 2026-09-30), draggable with the mouse (native `overflow-x:auto` only supports touch/trackpad/scrollbar dragging, not a mouse click-drag, so `Gallery.tsx` implements it directly via pointer capture), and the red circular arrows (styled like the hero's `.scroll-arrow`) speed the auto-scroll up ~10x while held (with a 1s minimum so a quick click still registers) rather than jumping one image — right arrow boosts forward, left arrow boosts in reverse. Touch-pause mechanics otherwise match ClientsCarousel.
 
 # Squad app section
 
