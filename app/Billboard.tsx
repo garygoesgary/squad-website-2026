@@ -58,7 +58,7 @@ export default function Billboard() {
     <section
       className="section-billboard"
       role="img"
-      aria-label="Billboard reading 'Your story starts here' — Squad, hospitality talent scouts"
+      aria-label="Billboard reading 'Trust us to find the best.' — Squad, hospitality talent scouts"
       ref={sectionRef}
     >
       <div className="billboard-image" aria-hidden="true" />
