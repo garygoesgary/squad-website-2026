@@ -322,21 +322,6 @@ img { max-width: 100%; display: block; }
 .app-details-body + .app-details-body {
   margin-top: 16px;
 }
-.app-badges {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-}
-.app-badges img {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-.app-badges img.google-play-badge {
-  /* Corrects the source SVG, which Figma stores pre-flipped (its own
-     generated code applies this same rotate+scaleX pair). */
-  transform: rotate(180deg) scaleX(-1);
-}
 @media (max-width: 900px) {
   .app-grid {
     grid-template-columns: 1fr;

@@ -27,21 +27,6 @@ export default function SquadApp() {
             across Australia to follow.
           </strong>
         </p>
-        <div className="app-badges">
-          <a href="#" aria-label="Download on the App Store">
-            <img src="/images/app-store-badge.svg" alt="Download on the App Store" />
-          </a>
-          <a href="#" aria-label="Get it on Google Play">
-            {/* The source SVG Figma exported is stored pre-flipped —
-                its own generated code wraps it in the same corrective
-                transform applied here. */}
-            <img
-              className="google-play-badge"
-              src="/images/google-play-badge.svg"
-              alt="Get it on Google Play"
-            />
-          </a>
-        </div>
       </div>
     </div>
   );

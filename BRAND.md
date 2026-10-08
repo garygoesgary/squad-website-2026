@@ -86,10 +86,9 @@ Auto-scrolls right-to-left (opposite of ClientsCarousel, deliberately — 2026-0
 
 # Squad app section
 
-"Download the NEW Squad app" ([SquadApp.tsx](app/SquadApp.tsx), Figma node 132:280), sits directly above the clients carousel, reusing Services' 3-column grid (heading / details+badges / empty). The divider line originally under Services (`border-bottom`) now sits under this section instead (on `.app-grid`, not `.services-grid`) — moved 2026-09-30. Badge assets pulled from that Figma node, not re-sourced from Apple/Google directly:
+"The New Squad booking app…Coming Soon!" ([SquadApp.tsx](app/SquadApp.tsx), Figma node 132:280), sits directly above the clients carousel, reusing Services' 3-column grid (heading / details+badges / empty). The divider line originally under Services (`border-bottom`) now sits under this section instead (on `.app-grid`, not `.services-grid`) — moved 2026-09-30.
 
-- [`public/images/app-store-badge.svg`](public/images/app-store-badge.svg) — real SVG, hand-assembled from Figma's own 5 separately-transformed vector layers (background pill, border stroke, Apple logo, "App Store" text, "Download on the" text) since Figma has no single clean SVG export for this badge. Each layer's position/size was computed from its Figma inset percentage against the shared parent frame, not eyeballed — verified pixel-accurate against Figma's own render. Replaced a flattened PNG version 2026-09-30.
-- [`public/images/google-play-badge.svg`](public/images/google-play-badge.svg) — real vector export. **Note:** the source SVG is stored pre-flipped by Figma (its own generated code wraps it in a `rotate(180deg) scaleX(-1)` correction) — that same corrective transform is applied via `.app-badges img.google-play-badge` in globals.css. Don't remove it without checking the badge still reads right-side up.
+The App Store / Google Play badges (and their `.app-badges` CSS) were removed 2026-10-08, since the app isn't live yet ("Coming Soon"). The asset files are still in `public/images/` (`app-store-badge.svg` — hand-assembled from Figma's 5 separately-transformed vector layers, verified pixel-accurate; `google-play-badge.svg` — real export, note its source SVG is pre-flipped by Figma) unused but not deleted, in case the badges come back once the app actually ships.
 
 # Billboard parallax
 
