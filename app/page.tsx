@@ -19,7 +19,7 @@ export default function Home() {
             <img
               className="hero-tagline"
               src="/images/hero-tagline.svg"
-              alt="hospitality talent recruitment agency"
+              alt="hospitality staffing specialists"
             />
           </div>
 
