@@ -16,7 +16,7 @@ const images = [
   { src: "/images/gallery/gallery-7.webp", alt: "Staff member carrying drinks poolside" },
   { src: "/images/gallery/gallery-8.webp", alt: "Waiter smiling at a restaurant bar" },
   { src: "/images/gallery/gallery-9.webp", alt: "Hotel staff member folding towels poolside" },
-  { src: "/images/gallery/gallery-10.webp", alt: "Waiter carrying plates of food" },
+  { src: "/images/gallery/gallery-10.webp", alt: "Chefs plating food at an open kitchen pass" },
   { src: "/images/gallery/gallery-11.webp", alt: "Hotel receptionist answering the phone" },
   { src: "/images/gallery/gallery-12.webp", alt: "Barista preparing coffee" },
 ];
