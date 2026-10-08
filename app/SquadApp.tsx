@@ -9,7 +9,7 @@ export default function SquadApp() {
         The New Squad booking app&hellip;Coming Soon!
       </h2>
       <div className="app-details reveal reveal-delay-1">
-        <p className="app-details-label">Quick online booking for jobs</p>
+        <p className="app-details-label">Quick online booking for hospitality staff</p>
         <p className="app-details-body">
           Vetted kitchen hands, cooks, section chefs, sous chefs, head chefs,
           housekeepers, utility staff and more, available for anything from
