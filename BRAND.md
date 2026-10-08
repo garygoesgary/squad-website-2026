@@ -93,9 +93,9 @@ Auto-scrolls right-to-left (opposite of ClientsCarousel, deliberately — 2026-0
 
 # Billboard parallax
 
-[Billboard.tsx](app/Billboard.tsx) — the "YOUR STORY STARTS HERE" section now parallaxes: the image renders 30% taller than its container and shifts vertically (via `transform`, scroll-driven, rAF-throttled) as the section passes through the viewport. Deliberately not `background-attachment: fixed` — that doesn't work on iOS Safari. Respects `prefers-reduced-motion` (skips the effect entirely, image stays centred/static).
+[Billboard.tsx](app/Billboard.tsx) — the billboard section parallaxes: the image renders 30% taller than its container and shifts vertically (via `transform`, scroll-driven, rAF-throttled) as the section passes through the viewport. Deliberately not `background-attachment: fixed` — that doesn't work on iOS Safari. Respects `prefers-reduced-motion` (skips the effect entirely, image stays centred/static).
 
-The body copy under "Quick online booking for jobs" is word-for-word identical to the "Long-term temporary personnel" service item's paragraphs — this reads as leftover/duplicated placeholder text in the Figma file (mismatched to an app-booking heading), not real app copy. Flagged to the client; swap in real copy when supplied.
+[SquadApp.tsx](app/SquadApp.tsx)'s heading and body copy were updated 2026-10-08 with real content from the client (was leftover/duplicated placeholder text copy-pasted from the "Long-term temporary personnel" service item — now genuine app copy). Heading reads "The New Squad booking app…Coming Soon!"; the third body paragraph ("Launching first in South East Queensland…") is bold (`<strong>`).
 
 # Acknowledgement of Country flags
 

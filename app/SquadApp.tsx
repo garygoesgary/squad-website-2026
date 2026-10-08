@@ -6,21 +6,26 @@ export default function SquadApp() {
   return (
     <div className="app-grid">
       <h2 className="app-heading reveal">
-        Download the
-        <br />
-        NEW Squad app
+        The New Squad booking app&hellip;Coming Soon!
       </h2>
       <div className="app-details reveal reveal-delay-1">
         <p className="app-details-label">Quick online booking for jobs</p>
         <p className="app-details-body">
-          Vetted kitchen hands, cooks, section chefs, sous chefs, head chefs
-          and housekeepers who travel to regional, remote, island and
-          accommodated locations.
+          Vetted kitchen hands, cooks, section chefs, sous chefs, head chefs,
+          housekeepers, utility staff and more, available for anything from
+          a single shift to ongoing weekly requirements.
         </p>
         <p className="app-details-body">
-          Assignments commonly run from around three to twelve weeks or
-          longer, with staff working the hours required and operating as
-          part of the client&rsquo;s existing team.
+          When Squad launches in your area, you&rsquo;ll be able to post
+          jobs, see which of our vetted staff are available and interested,
+          choose who you want, confirm the booking and manage timesheets,
+          all through the Squad app.
+        </p>
+        <p className="app-details-body">
+          <strong>
+            Launching first in South East Queensland, with more locations
+            across Australia to follow.
+          </strong>
         </p>
         <div className="app-badges">
           <a href="#" aria-label="Download on the App Store">

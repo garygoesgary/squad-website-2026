@@ -20,31 +20,16 @@ export default function Footer() {
           alt="we love your work."
         />
 
-        <div className="footer-columns">
-          <div className="footer-contact">
-            <p>1300 491 856</p>
-            <a href="mailto:hello@squadrecruitment.com.au">
-              hello@squadrecruitment.com.au
-            </a>
-          </div>
-
-          <div className="footer-addresses">
-            <p>
-              194 Sandgate Rd, Albion
-              <br />
-              Queensland 4010
-            </p>
-            <p>
-              120 Spencer St, Melbourne
-              <br />
-              Victoria 3000
-            </p>
-            <p>
-              64 York St, Sydney
-              <br />
-              New South Wales 2000
-            </p>
-          </div>
+        <div className="footer-contact">
+          <p>1300 491 856</p>
+          <a href="mailto:hello@squadhospitality.com.au">
+            hello@squadhospitality.com.au
+          </a>
+          <p className="footer-address">
+            194 Sandgate Rd, Albion
+            <br />
+            Queensland 4010
+          </p>
         </div>
 
         <div className="footer-acknowledgement-block">
